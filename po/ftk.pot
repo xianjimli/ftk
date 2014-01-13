@@ -1,0 +1,332 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-01-13 15:25+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: opengles/redbook/fog.c:164
+msgid "fog"
+msgstr ""
+
+#: opengles/redbook/hello.c:103
+msgid "helloGLES"
+msgstr ""
+
+#: opengles/redbook/material.c:289
+msgid "material"
+msgstr ""
+
+#: opengles/redbook/alpha3D.c:154
+msgid "alpha3D"
+msgstr ""
+
+#: src/ftk_file_browser.c:127 src/ftk_file_browser.c:207
+#: apps/designer/select_file.c:164 apps/designer/widget_editor.c:273
+msgid "OK"
+msgstr ""
+
+#: src/ftk_file_browser.c:132 src/ftk_file_browser.c:212
+#: apps/designer/select_file.c:168 apps/designer/widget_editor.c:277
+msgid "Cancel"
+msgstr ""
+
+#: src/ftk_file_browser.c:148
+msgid "Yes"
+msgstr ""
+
+#: src/ftk_file_browser.c:149
+msgid "No"
+msgstr ""
+
+#: src/ftk_file_browser.c:156 src/ftk_file_browser.c:236
+#: src/ftk_file_browser.c:371 src/ftk_file_browser.c:545
+msgid ".."
+msgstr ""
+
+#: src/ftk_file_browser.c:161
+msgid ""
+"Are you sure to remove:\n"
+" "
+msgstr ""
+
+#: src/ftk_file_browser.c:163 src/ftk_file_browser.c:322
+msgid "Remove"
+msgstr ""
+
+#: src/ftk_file_browser.c:173
+msgid "Remove failed:\n"
+msgstr ""
+
+#: src/ftk_file_browser.c:241
+msgid "Please input new name:"
+msgstr ""
+
+#: src/ftk_file_browser.c:259
+msgid "Rename failed."
+msgstr ""
+
+#: src/ftk_file_browser.c:279
+msgid "Please input folder name:"
+msgstr ""
+
+#: src/ftk_file_browser.c:295
+msgid "Create folder failed."
+msgstr ""
+
+#: src/ftk_file_browser.c:327
+msgid "Rename"
+msgstr ""
+
+#: src/ftk_file_browser.c:332
+msgid "Create Folder"
+msgstr ""
+
+#: src/ftk_file_browser.c:337
+msgid "Detail"
+msgstr ""
+
+#: src/ftk_file_browser.c:342 src/demos/demo_tab.c:77
+#: apps/calculator/ftk_app_calc.c:159 apps/calculator/ftk_app_calc.c:183
+msgid "Quit"
+msgstr ""
+
+#: src/ftk_file_browser.c:347
+msgid "More"
+msgstr ""
+
+#: src/ftk_file_browser.c:438 apps/filemanager/ftk_app_file_browser.c:30
+msgid "File Browser"
+msgstr ""
+
+#: src/im/default/ftk_input_method_hw.c:446
+msgid "Hand Write"
+msgstr ""
+
+#: src/demos/demo_tab.c:23
+msgid "tab"
+msgstr ""
+
+#: src/demos/demo_check_button.c:13
+msgid "check_button"
+msgstr ""
+
+#: src/demos/demo_dialog.c:8
+msgid "dialog"
+msgstr ""
+
+#: src/demos/demo_combo_box.c:16
+msgid "combo_box"
+msgstr ""
+
+#: src/demos/demo_button.c:37
+msgid "button"
+msgstr ""
+
+#: src/demos/demo_file_browser.c:54
+msgid "file_browser"
+msgstr ""
+
+#: src/demos/demo_icon_view.c:48
+msgid "icon_view"
+msgstr ""
+
+#: src/demos/demo_hello.c:8
+msgid "hello"
+msgstr ""
+
+#: src/demos/demo_image.c:8
+msgid "image"
+msgstr ""
+
+#: src/demos/demo_statusbar.c:32
+msgid "status_bar"
+msgstr ""
+
+#: src/demos/demo_ime.c:14
+msgid "ime"
+msgstr ""
+
+#: src/demos/demo_image_button.c:60
+msgid "image_button"
+msgstr ""
+
+#: src/demos/demo_text_view.c:20
+msgid "text_view"
+msgstr ""
+
+#: src/demos/demo_msgbox.c:50
+msgid "msgbox"
+msgstr ""
+
+#: src/demos/demo_label.c:36
+msgid "label"
+msgstr ""
+
+#: src/demos/demo_listview.c:89
+msgid "listview"
+msgstr ""
+
+#: src/demos/demo_draw.c:80
+msgid "draw"
+msgstr ""
+
+#: src/demos/demo_keyboard.c:10
+msgid "keyboard"
+msgstr ""
+
+#: src/demos/demo_progress_bar.c:39
+msgid "progress_bar"
+msgstr ""
+
+#: src/demos/demo_cairo.c:362
+msgid "cairo"
+msgstr ""
+
+#: src/demos/demo_fullscreen.c:61
+msgid "fullscreen"
+msgstr ""
+
+#: src/demos/demo_multi_win.c:71
+msgid "multi_win"
+msgstr ""
+
+#: src/demos/demo_entry.c:45
+msgid "entry"
+msgstr ""
+
+#: src/demos/demo_menu.c:91
+msgid "menu"
+msgstr ""
+
+#: src/demos/demo_popup.c:87
+msgid "popup"
+msgstr ""
+
+#: src/demos/demo_sprite.c:43
+msgid "sprite"
+msgstr ""
+
+#: src/demos/demo_xul.c:19
+msgid "xul"
+msgstr ""
+
+#: src/demos/demo_transparent.c:122
+msgid "transparent"
+msgstr ""
+
+#: src/demos/demo_wait_box.c:29
+msgid "wait_box"
+msgstr ""
+
+#: src/demos/demo_scroll_bar.c:22
+msgid "scroll_bar"
+msgstr ""
+
+#: apps/shell/ftk_app_shell.c:69 apps/shell/ftk_app_shell.c:195
+msgid "Shell"
+msgstr ""
+
+#: apps/shell/ftk_app_shell.c:199
+msgid "Input command at here."
+msgstr ""
+
+#: apps/calculator/ftk_app_calc.c:216
+msgid "Calculator"
+msgstr ""
+
+#: apps/designer/ftk_app_designer.c:85
+msgid "Designer"
+msgstr ""
+
+#: apps/designer/ftk_app_designer.c:105
+msgid "FTK UI Designer"
+msgstr ""
+
+#: apps/designer/ftk_app_designer.c:346
+msgid "Edit"
+msgstr ""
+
+#: apps/designer/open.c:88
+msgid "Open..."
+msgstr ""
+
+#: apps/designer/select_file.c:149
+msgid "FileName:"
+msgstr ""
+
+#: apps/designer/select_file.c:160
+msgid "..."
+msgstr ""
+
+#: apps/designer/save.c:66
+msgid "Save..."
+msgstr ""
+
+#: apps/designer/widget_editor.c:199
+msgid "Widget Editor"
+msgstr ""
+
+#: apps/designer/widget_editor.c:209
+msgid "Full screen"
+msgstr ""
+
+#: apps/designer/widget_editor.c:213
+msgid "AnimHint:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:221
+msgid "Type:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:237
+msgid "ID:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:243
+msgid "X:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:249
+msgid "Y:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:255
+msgid "Width:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:261
+msgid "Height:"
+msgstr ""
+
+#: apps/designer/widget_editor.c:268
+msgid "Text:"
+msgstr ""
+
+#: apps/desktop/main.c:232
+msgid "Shutdown"
+msgstr ""
+
+#: apps/desktop/main.c:240
+msgid "Stop VNC"
+msgstr ""
+
+#: apps/desktop/main.c:244
+msgid "Start VNC"
+msgstr ""
+
+#: apps/desktop/main.c:320
+msgid "Hello, GetText"
+msgstr ""

@@ -1,0 +1,37 @@
+FTK on PSP:
+1. install the psptoolchain
+ * svn checkout svn://svn.ps2dev.org/psp/trunk/psptoolchain
+ * remmeber to add the export to your home .bashrc and root .bashrc
+ * and reboot your PC once.
+2. please copy env.sh and cross.mk to the parent dir of your ftk, yes, the parent dir.
+ * e.g.: 
+  * your ftk dir is ~/build/ftk
+  * copy env.sh and cross.mk to ~/build/
+  * make sure your ftk dir is named as "ftk"
+3. cd to ~/build/
+4. edit ftk/src/rules.mk 
+ * enable the -DPSP, disbale the -DLINUX
+5. source env.sh
+6. make -f cross.mk
+ * when you met a error in configure like 
+  "checking host system type... Invalid configuration `psp': machine `psp' not recognized"
+ * please edit your config.sub/config.guess to add:
+       psp)
+               basic_machine=mipsallegrexel-psp
+               os=-elf
+ * or you could remove the symble link:
+  * rm config.sub config.guess
+  * copy 
+    psptoolchain/build/newlib-1.16.0/config.sub 
+    psptoolchain/build/newlib-1.16.0/config.guess 
+    to replace it.
+  * please keep this rm/cp in your autogen.sh behind the automake section
+
+7. it will build zlib, libpng, jpeg from svn of ps2dev.
+8. then it will goto build ftk
+9. package.sh is used for build a EBOOT.PBP to run on PSP
+
+NOTE:
+Now it has disabled the script binding for compile error.
+
+Tao Yu <yut616@gmail.com>

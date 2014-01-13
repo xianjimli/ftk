@@ -1,0 +1,57 @@
+/*
+ * File: ftk_interpolator_acc_decelerate.h    
+ * Author:  Li XianJing <xianjimli@hotmail.com>
+ * Brief:   acc_decelerate interpolator for animation.
+ *
+ * Copyright (c) 2009 - 2011  Li XianJing <xianjimli@hotmail.com>
+ *
+ * Licensed under the Academic Free License version 2.1
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+/*
+ * History:
+ * ================================================================
+ * 2011-03-20 Li XianJing <xianjimli@hotmail.com> created
+ *
+ */
+
+#include <math.h>
+#include "ftk_interpolator.h"
+
+#define PI 3.1415926
+
+static float my_cos(float d)
+{
+	return (float)cos(d);
+}
+
+static float ftk_interpolator_acc_decelerate_get(FtkInterpolator* thiz, float percent)
+{
+	return (float)((my_cos((percent + 1) * PI) / 2.0f) + 0.5f);
+}
+
+const static FtkInterpolator s_interpolator_acc_decelerate = 
+{
+	ftk_interpolator_acc_decelerate_get,
+	NULL
+};
+
+FtkInterpolator* ftk_interpolator_acc_decelerate_create(void)
+{
+	return (FtkInterpolator*)&s_interpolator_acc_decelerate;
+}
+

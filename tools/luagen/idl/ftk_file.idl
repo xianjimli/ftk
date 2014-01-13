@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+typedef voidPtr FtkFilePtr;
+interface FtkFile
+{
+	Ret ftk_file_get_info(in CStrPtr file_name, in FtkFileInfoPtr info);
+	CStrPtr ftk_file_get_mime_type(in CStrPtr file_name);
+};

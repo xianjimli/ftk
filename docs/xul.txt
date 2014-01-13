@@ -1,0 +1,66 @@
+XUL = XML UI Language
+=====================================================
+o supported widget
+  label
+  entry
+  button
+  wait_box
+  progress_bar
+  radio_group
+  radio_button
+  check_button
+  image
+  scroll_bar
+  window
+  dialog
+  icon_view
+  list_view
+
+o supported attribute
+  x 
+  y
+  w
+  h
+  id
+  attr
+  value
+  visible
+  max_value
+  page_delta
+  checked
+  bg[normal]
+  bg[active]
+  bg[focused]
+  bg[disable]
+  bg_image[normal]
+  bg_image[disable]
+  bg_image[active]
+  bg_image[focused]
+  fg[normal]
+  fg[active]
+  fg[focused]
+  fg[disable]
+  animator
+
+o supported variable, variable preceeded with '$'
+  pw/parent_width
+  ph/parent_height
+  ww/window_width
+  wh/window_height
+  dw/display_width
+  dh/display_height
+  FTK_ATTR_TRANSPARENT
+  FTK_ATTR_BG_CENTER
+  FTK_ATTR_BG_TILE
+  FTK_ATTR_BG_FOUR_CORNER
+  FTK_ATTR_NO_FOCUS
+  FTK_ATTR_INSENSITIVE
+  FTK_ATTR_FOCUSED
+  FTK_ANI_TO_RIGHT
+  FTK_ANI_TO_DOWN
+  FTK_ANI_TO_UP
+  FTK_ANI_TO_EAST_SOUTH
+  FTK_ANI_TO_EAST_NORTH
+
+There are many examples in src/demos
+

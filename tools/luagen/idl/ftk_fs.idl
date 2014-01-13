@@ -1,0 +1,13 @@
+#include "ftk_typedef.idl"
+
+interface FtkFs
+{
+	Ret ftk_fs_delete(in CStrPtr dir);
+	Ret ftk_fs_delete_dir(in CStrPtr dir);
+	Ret ftk_fs_delete_file(in CStrPtr file_name);
+	Ret ftk_fs_create_dir(in CStrPtr dir);
+	Ret ftk_fs_change_dir(in CStrPtr dir);
+	Ret ftk_fs_move(in CStrPtr dir_from, in CStrPtr dir_to);
+	Ret ftk_fs_copy(in CStrPtr dir_from, in CStrPtr dir_to);
+	int ftk_fs_is_root(in CStrPtr path);
+};

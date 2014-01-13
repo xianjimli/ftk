@@ -1,0 +1,11 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkMenuPanelPtr;
+interface FtkMenuPanel : FtkWidget
+{
+	FtkMenuPanelPtr ftk_menu_panel_create();
+	Ret ftk_menu_panel_relayout(in FtkWidgetPtr thiz);
+	Ret ftk_menu_panel_add(in FtkWidgetPtr thiz, in FtkWidgetPtr item);
+	Ret ftk_menu_panel_remove(in FtkWidgetPtr thiz, in FtkWidgetPtr item);
+};
+

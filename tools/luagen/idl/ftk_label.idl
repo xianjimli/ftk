@@ -1,0 +1,7 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkLabelPtr;
+interface FtkLabel : FtkWidget
+{
+	FtkLabelPtr ftk_label_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+};

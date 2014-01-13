@@ -1,0 +1,11 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkPopupMenuPtr;
+interface FtkPopupMenu : FtkWidget
+{
+	FtkPopupMenuPtr ftk_popup_menu_create(in int x, in int y, in int w, in int h, in FtkBitmapPtr icon, in CStrPtr title);
+	Ret ftk_popup_menu_add(in FtkWidgetPtr thiz, in FtkListItemInfoPtr info);
+	int ftk_popup_menu_get_selected(in FtkWidgetPtr thiz);
+	int ftk_popup_menu_calc_height(in int has_title, in int visible_items);
+	Ret ftk_popup_menu_set_clicked_listener(in FtkWidgetPtr thiz, in FtkListItemListenerFunc listener);
+};

@@ -1,0 +1,17 @@
+Cross build steps:
+1. copy makedist.sh cross.mk and env.sh into the PARENT directory of ftk.
+2. edit env.sh to set some variables.
+3. source env.sh
+4. make -f cross.mk
+5. run makedist.sh to make dist package(ftk-dist.tar.gz).
+6. download ftk-dist.tar.gz to target board and extrat it in root directory.
+7. enter /opt/ftk-$ARCH/bin(depend on the prefix you set in evn.sh) and run desktop.
+
+If you have problems to build, please check the following:
+1.make sure the basic build tools(automake/libtool/gettext/m4) are installed in current system.
+2.make sure current user has permission to write /opt/ftk-$ARCH
+3.make sure not use libtoolize/libtool provided by toolchain(remove them from toolchain dir).
+
+Enjoy it!
+
+

@@ -1,0 +1,421 @@
+
+typedef long int;
+typedef char uchar;
+typedef unsigned long uint;
+typedef unsigned long size_t;
+typedef unsigned long time_t;
+typedef unsigned long ulong;
+typedef unsigned short ushort;
+typedef long voidPtr;
+typedef voidPtr Chars;
+typedef voidPtr FtkListItemInfoPtr;
+typedef voidPtr FtkMmapPtr;
+typedef voidPtr FtkRectPtr;
+typedef voidPtr FtkGlyphPtr;
+typedef voidPtr FtkColorPtr;
+typedef voidPtr FtkBitmapPtr;
+typedef voidPtr FtkGcPtr;
+typedef voidPtr FtkCanvasPtr;
+typedef voidPtr CStrPtr;
+typedef voidPtr StrPtr;
+typedef voidPtr StrPtr2;
+typedef voidPtr CStrPtr2;
+typedef voidPtr StrArray;
+typedef voidPtr CStrArray;
+typedef voidPtr FtkEventPtr;
+typedef voidPtr FtkWidgetPtr;
+typedef voidPtr FtkDisplayPtr;
+typedef voidPtr FtkMainLoopPtr;
+typedef voidPtr FtkWndManagerPtr;
+typedef voidPtr FtkBitmapFactoryPtr;
+typedef voidPtr FtkSourcesManagerPtr;
+typedef voidPtr FtkThemePtr;
+typedef voidPtr FtkAllocatorPtr;
+typedef voidPtr FtkInputMethodManagerPtr;
+typedef voidPtr FtkImPreeditorPtr;
+typedef voidPtr FtkSourcePtr;
+typedef voidPtr FtkImageDecoderPtr;
+typedef voidPtr FtkIconCachePtr;
+typedef voidPtr FtkIconViewItemPtr;
+typedef voidPtr FtkListModelPtr;
+typedef voidPtr FtkListRenderPtr;
+typedef voidPtr FtkSpritePtr;
+typedef voidPtr FtkTranslatorPtr;
+typedef voidPtr FtkAnimatorPtr;
+typedef voidPtr FtkConfigPtr;
+typedef voidPtr FtkIdleFunc;
+typedef voidPtr FtkTimerFunc;
+typedef voidPtr FtkOnEventFunc;
+typedef voidPtr FtkListenerFunc;
+typedef voidPtr FtkDestroyFunc;
+typedef voidPtr FtkLoadImageFunc;
+typedef voidPtr FtkTranslateTextFunc;
+typedef voidPtr FtkTranslatePathFunc;
+typedef voidPtr FtkDisplayOnUpdateFunc;
+typedef voidPtr FtkPrepareOptionsMenuFunc;
+typedef voidPtr FtkWidgetListenerFunc;
+typedef voidPtr FtkEventListenerFunc;
+typedef voidPtr FtkListItemListenerFunc;
+typedef voidPtr FtkFileBrowserOnChoosedFunc;
+typedef long FtkFsHandle;
+typedef voidPtr FtkFileInfoPtr;
+
+
+enum FtkBool
+{
+	FTK_TRUE,
+	FTK_FALSE
+};
+
+enum FtkListItemType
+{
+	FTK_LIST_ITEM_NORMAL,
+	FTK_LIST_ITEM_RADIO,
+	FTK_LIST_ITEM_CHECK,
+	FTK_LIST_ITEM_MORE 
+};
+
+enum FtkInputType
+{
+	FTK_INPUT_NORMAL,
+	FTK_INPUT_DIGIT,
+	FTK_INPUT_ALPHA,
+	FTK_INPUT_URL,
+	FTK_INPUT_EMAIL,
+	FTK_INPUT_ALL
+};
+
+enum FtkFileBrowserType
+{
+    FTK_FILE_BROWER_APP,
+    FTK_FILE_BROWER_SINGLE_CHOOSER,
+    FTK_FILE_BROWER_MULTI_CHOOSER
+};
+
+enum FtkGcMask
+{
+	FTK_GC_BG        ,
+	FTK_GC_FG        ,
+	FTK_GC_FONT      ,
+	FTK_GC_ALPHA     ,
+	FTK_GC_BITMAP    ,
+	FTK_GC_LINE_MASK 
+};
+
+struct FtkPoint
+{
+	int x;
+	int y;
+};
+
+struct FtkColor
+{
+	uchar b;
+	uchar g;
+	uchar r;
+	uchar a;
+};
+
+struct FtkRect
+{
+	int x;
+	int y;
+	int width;
+	int height;
+};
+
+struct FtkFileInfo
+{
+    int uid;
+    int gid;
+    int mode;
+    int is_dir;
+    size_t size;
+    time_t last_access;
+    time_t last_modify;
+    Chars name;
+};
+
+struct FtkListItemInfo
+{
+	StrPtr text;
+	int   value; 
+	int   state; 
+	int   type;
+	FtkBitmapPtr left_icon;
+	FtkBitmapPtr right_icon;
+	voidPtr      user_data;
+	voidPtr      extra_user_data;
+};
+
+struct FtkIconViewItem
+{
+	StrPtr text;
+	FtkBitmapPtr icon;
+	StrPtr user_data;
+};
+
+enum FtkEventType
+{
+	FTK_EVT_NOP,
+	FTK_EVT_IDLE,
+	FTK_EVT_TIMER,
+	FTK_EVT_QUIT,
+	FTK_EVT_KEY_UP,
+	FTK_EVT_KEY_DOWN,
+	FTK_EVT_MOUSE_MOVE,
+	FTK_EVT_MOUSE_DOWN,
+	FTK_EVT_MOUSE_LONG_PRESS,
+	FTK_EVT_KEY_LONG_PRESS,
+	FTK_EVT_MOUSE_UP,
+	FTK_EVT_HIDE,
+	FTK_EVT_SHOW,
+	FTK_EVT_MAP,
+	FTK_EVT_UNMAP,
+	FTK_EVT_UPDATE,
+	FTK_EVT_MOVE,
+	FTK_EVT_RESIZE,
+	FTK_EVT_MOVE_RESIZE,
+	FTK_EVT_FOCUS_IN,
+	FTK_EVT_FOCUS_OUT,
+	FTK_EVT_ADD_CHILD,
+	FTK_EVT_IM_COMMIT,
+	FTK_EVT_IM_PREEDIT,
+	FTK_EVT_IM_ACT_COMMIT,
+	FTK_EVT_REMOVE_CHILD,
+	FTK_EVT_WND_DESTROY,
+	FTK_EVT_RELAYOUT_WND,
+	FTK_EVT_ADD_SOURCE,
+	FTK_EVT_REMOVE_SOURCE,
+	FTK_EVT_THEME_CHANGED,
+	FTK_EVT_LOCALE_CHANGED,
+	FTK_EVT_DISPLAY_CHANGED, 
+	FTK_EVT_TOP_WND_CHANGED,
+	FTK_EVT_WND_CONFIG_CHANGED
+};
+
+enum Ret
+{
+	RET_OK,
+	RET_FAIL,
+	RET_REMOVE,
+	RET_CONTINUE,
+	RET_FOUND,
+	RET_NEXT,
+	RET_QUIT,
+	RET_IGNORED,
+	RET_NO_TARGET,
+	RET_OUT_OF_SPACE
+};
+
+enum FtkWidgetType
+{
+	FTK_WIDGET_NONE,
+	FTK_WINDOW,
+	FTK_DIALOG,
+	FTK_WINDOW_MISC,
+	FTK_STATUS_PANEL,
+	FTK_MENU_PANEL,
+	FTK_MENU_ITEM,
+	FTK_LABEL,
+	FTK_BUTTON,
+	FTK_IMAGE,
+	FTK_ENTRY,
+	FTK_PAINTER,
+	FTK_WAIT_BOX,
+	FTK_STATUS_ITEM,
+	FTK_PROGRESS_BAR,
+	FTK_GROUP_BOX,
+	FTK_RADIO_BUTTON,
+	FTK_CHECK_BUTTON,
+	FTK_SCROLL_VBAR,
+	FTK_SCROLL_HBAR,
+	FTK_LIST_VIEW,
+	FTK_ICON_VIEW,
+	FTK_TEXT_VIEW,
+	FTK_COMBO_BOX,
+	FTK_WIDGET_TYPE_NR
+};
+
+enum FtkLogLevel
+{
+	FTK_LOG_V,
+	FTK_LOG_D,
+	FTK_LOG_E
+};
+
+enum FtkWidgetState
+{
+	FTK_WIDGET_NORMAL,
+	FTK_WIDGET_FOCUSED,
+	FTK_WIDGET_ACTIVE,
+	FTK_WIDGET_INSENSITIVE,
+	FTK_WIDGET_STATE_NR
+};
+
+enum FtkWidgetAttr
+{
+	FTK_ATTR_TRANSPARENT     ,
+	FTK_ATTR_NO_FOCUS        ,
+	FTK_ATTR_BG_CENTER       ,
+	FTK_ATTR_BG_TILE         ,
+	FTK_ATTR_BG_FOUR_CORNER  ,
+	FTK_ATTR_INSENSITIVE     ,
+	FTK_ATTR_FOCUSED         ,
+	FTK_ATTR_IGNORE_CLOSE    ,
+	FTK_ATTR_QUIT_WHEN_CLOSE , 
+	FTK_ATTR_AUTO_LAYOUT     ,
+	FTK_ATTR_POPUP            
+};
+
+enum FtkKey
+{
+	FTK_KEY_SPACE         ,
+	FTK_KEY_EXCLAM        ,
+	FTK_KEY_QUOTEDBL      ,
+	FTK_KEY_NUMBERSIGN    ,
+	FTK_KEY_DOLLAR        ,
+	FTK_KEY_PERCENT       ,
+	FTK_KEY_AMPERSAND     ,
+	FTK_KEY_APOSTROPHE    ,
+	FTK_KEY_QUOTERIGHT    ,
+	FTK_KEY_PARENLEFT     ,
+	FTK_KEY_PARENRIGHT    ,
+	FTK_KEY_ASTERISK      ,
+	FTK_KEY_PLUS          ,
+	FTK_KEY_COMMA         ,
+	FTK_KEY_MINUS         ,
+	FTK_KEY_PERIOD        ,
+	FTK_KEY_SLASH         ,
+	FTK_KEY_0             ,
+	FTK_KEY_1             ,
+	FTK_KEY_2             ,
+	FTK_KEY_3             ,
+	FTK_KEY_4             ,
+	FTK_KEY_5             ,
+	FTK_KEY_6             ,
+	FTK_KEY_7             ,
+	FTK_KEY_8             ,
+	FTK_KEY_9             ,
+	FTK_KEY_COLON         ,
+	FTK_KEY_SEMICOLON     ,
+	FTK_KEY_LESS          ,
+	FTK_KEY_EQUAL         ,
+	FTK_KEY_GREATER       ,
+	FTK_KEY_QUESTION      ,
+	FTK_KEY_AT            ,
+	FTK_KEY_A             ,
+	FTK_KEY_B             ,
+	FTK_KEY_C             ,
+	FTK_KEY_D             ,
+	FTK_KEY_E             ,
+	FTK_KEY_F             ,
+	FTK_KEY_G             ,
+	FTK_KEY_H             ,
+	FTK_KEY_I             ,
+	FTK_KEY_J             ,
+	FTK_KEY_K             ,
+	FTK_KEY_L             ,
+	FTK_KEY_M             ,
+	FTK_KEY_N             ,
+	FTK_KEY_O             ,
+	FTK_KEY_P             ,
+	FTK_KEY_Q             ,
+	FTK_KEY_R             ,
+	FTK_KEY_S             ,
+	FTK_KEY_T             ,
+	FTK_KEY_U             ,
+	FTK_KEY_V             ,
+	FTK_KEY_W             ,
+	FTK_KEY_X             ,
+	FTK_KEY_Y             ,
+	FTK_KEY_Z             ,
+	FTK_KEY_BRACKETLEFT   ,
+	FTK_KEY_BACKSLASH     ,
+	FTK_KEY_BRACKETRIGHT  ,
+	FTK_KEY_ASCIICIRCUM   ,
+	FTK_KEY_UNDERSCORE    ,
+	FTK_KEY_QUOTELEFT     ,
+	FTK_KEY_GRAVE         ,
+	FTK_KEY_LEFTBRACE     ,
+	FTK_KEY_OR            ,
+	FTK_KEY_RIGHTBRACE    ,
+	FTK_KEY_NOT           ,
+	FTK_KEY_DOT           ,
+	FTK_KEY_HOME          ,
+	FTK_KEY_LEFT          ,
+	FTK_KEY_UP            ,
+	FTK_KEY_RIGHT         ,
+	FTK_KEY_DOWN          ,
+	FTK_KEY_PRIOR         ,
+	FTK_KEY_PAGEUP        ,
+	FTK_KEY_NEXT          ,
+	FTK_KEY_PAGEDOWN      ,
+	FTK_KEY_END           ,
+	FTK_KEY_BEGIN         ,
+	FTK_KEY_INSERT        ,
+	FTK_KEY_ENTER         ,
+	FTK_KEY_TAB           ,
+	FTK_KEY_ESC           ,
+	FTK_KEY_RIGHTCTRL   ,
+	FTK_KEY_LEFTCTRL    ,
+	FTK_KEY_RIGHTALT    ,
+	FTK_KEY_LEFTALT     ,
+	FTK_KEY_RIGHTSHIFT  ,
+	FTK_KEY_LEFTSHIFT   ,
+	FTK_KEY_DELETE      ,
+	FTK_KEY_F1          ,
+	FTK_KEY_F2          ,
+	FTK_KEY_F3          ,
+	FTK_KEY_F4          ,
+	FTK_KEY_F5          ,
+	FTK_KEY_F6          ,
+	FTK_KEY_F7          ,
+	FTK_KEY_F8          ,
+	FTK_KEY_F9          ,
+	FTK_KEY_F10         ,
+	FTK_KEY_CAPSLOCK    ,
+	FTK_KEY_BACKSPACE   ,
+	FTK_KEY_SEND        ,
+	FTK_KEY_REPLY       ,
+	FTK_KEY_SAVE        ,
+	FTK_KEY_BATTERY     ,
+	FTK_KEY_BLUETOOTH   ,
+	FTK_KEY_WLAN        ,
+	FTK_KEY_POWER       ,
+	FTK_KEY_MENU        
+};
+
+enum FtkBgStyle
+{
+	FTK_BG_NORMAL,
+	FTK_BG_TILE,
+	FTK_BG_CENTER,
+	FTK_BG_FOUR_CORNER
+};
+
+
+/*We don't care the real value, just need the symbols*/
+const ulong FTK_H_MARGIN             = 1;
+const ulong FTK_V_MARGIN             = 1;
+const ulong FTK_MAX_PATH             = 1;
+const ulong FTK_MAX_WINDOWS          = 1;
+const ulong FTK_SPACE_WIDTH          = 1;
+const ulong FTK_MAX_IMAGE_DECODERS   = 1;
+const ulong FTK_STATUS_PANEL_HEIGHT  = 1;
+const ulong FTK_DIALOG_MARGIN        = 1;
+const ulong FTK_DIALOG_BORDER        = 1;
+const ulong FTK_DIALOG_TITLE_HEIGHT  = 1;
+const ulong FTK_SCROLL_BAR_WIDTH     = 1;
+const ulong FTK_MENU_MAX_ITEM        = 1;
+const ulong FTK_MENU_ITEM_HEIGHT     = 1;
+const ulong FTK_MENU_ITEM_WIDTH      = 1;
+const ulong FTK_POPUP_MENU_ITEM_HEIGHT = 1;
+const ulong FTK_FONT_SIZE              = 1;
+const ulong FTK_LABEL_LEFT_MARGIN      = 1;
+const ulong FTK_LABEL_TOP_MARGIN       = 1;
+const ulong FTK_CLIPBOARD_SIZE         = 1;
+const ulong FTK_TITLE_LENGTH           = 1;
+const ulong FTK_IM_PREEDITOR_MAX_ROW   = 1;
+
+

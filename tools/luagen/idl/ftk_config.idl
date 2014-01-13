@@ -1,0 +1,18 @@
+#include "ftk_typedef.idl"
+
+interface FtkConfig
+{
+	CStrPtr ftk_config_get_theme(in FtkConfigPtr thiz);
+	CStrPtr ftk_config_get_data_dir(in FtkConfigPtr thiz);
+	CStrPtr ftk_config_get_data_root_dir(in FtkConfigPtr thiz);
+	CStrPtr ftk_config_get_test_data_dir(in FtkConfigPtr thiz);
+	int ftk_config_get_enable_cursor(in FtkConfigPtr thiz);
+	int ftk_config_get_enable_status_bar(in FtkConfigPtr thiz);
+
+	Ret ftk_config_set_theme(in FtkConfigPtr thiz, in CStrPtr theme);
+	Ret ftk_config_set_data_dir(in FtkConfigPtr thiz, in CStrPtr data_dir);
+	Ret ftk_config_set_test_data_dir(in FtkConfigPtr thiz, in CStrPtr test_data_dir);
+	Ret ftk_config_set_enable_cursor(in FtkConfigPtr thiz, in int enable_cursor);
+	Ret ftk_config_set_enable_status_bar(in FtkConfigPtr thiz, in int enable_status_bar);
+};
+

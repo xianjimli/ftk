@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+interface FtkListRender
+{
+	Ret ftk_list_render_init(in FtkListRenderPtr thiz, in FtkListModelPtr model, in FtkWidgetPtr list_view);
+	Ret ftk_list_render_paint(in FtkListRenderPtr thiz, in FtkCanvasPtr canvas, in int pos, in int x, in int y, in int w, in int h);
+	void ftk_list_render_destroy(in FtkListRenderPtr thiz);
+};

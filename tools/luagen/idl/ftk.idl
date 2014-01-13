@@ -1,0 +1,43 @@
+#include "ftk_typedef.idl"
+
+interface Ftk
+{
+	FtkDisplayPtr       ftk_default_display();
+	FtkMainLoopPtr      ftk_default_main_loop();
+	FtkLogLevel       ftk_default_log_level();
+	FtkWndManagerPtr    ftk_default_wnd_manager();
+	FtkWidgetPtr        ftk_default_status_panel();
+	FtkBitmapFactoryPtr ftk_default_bitmap_factory();
+	FtkSourcesManagerPtr ftk_default_sources_manager();
+	FtkCanvasPtr         ftk_shared_canvas();
+	FtkThemePtr          ftk_default_theme();
+	FtkSourcePtr         ftk_primary_source();
+	FtkAllocatorPtr      ftk_default_allocator();
+	FtkConfigPtr         ftk_default_config();
+	FtkInputMethodManagerPtr ftk_default_input_method_manager();
+	FtkImPreeditorPtr        ftk_default_input_method_preeditor();
+
+	void ftk_set_display(in FtkDisplayPtr display);
+	void ftk_set_main_loop(in FtkMainLoopPtr main_loop);
+	void ftk_set_log_level(in FtkLogLevel level);
+	void ftk_set_status_panel(in FtkWidgetPtr status_panel);
+	void ftk_set_wnd_manager(in FtkWndManagerPtr wnd_manager);
+	void ftk_set_bitmap_factory(in FtkBitmapFactoryPtr bitmap_factory);
+	void ftk_set_sources_manager(in FtkSourcesManagerPtr sources_manager);
+	void ftk_set_shared_canvas(in FtkCanvasPtr canvas);
+	void ftk_set_theme(in FtkThemePtr theme);
+	void ftk_set_config(in FtkConfigPtr config);
+	void ftk_set_primary_source(in FtkSourcePtr source);
+	void ftk_set_allocator(in FtkAllocatorPtr allocator);
+	void ftk_set_input_method_manager(in FtkInputMethodManagerPtr input_manager_manager);
+	void ftk_set_input_method_preeditor(in FtkImPreeditorPtr input_method_preeditor);
+
+	Ret ftk_init(in int argc, in StrArray argv);
+	Ret  ftk_run();
+	void ftk_quit();
+	
+	int ftk_tips(in CStrPtr text);
+	int ftk_warning(in CStrPtr title, in CStrPtr text, in CStrArray buttons);
+	int ftk_question(in CStrPtr title, in CStrPtr text, in CStrArray buttons);
+	int ftk_infomation(in CStrPtr title, in CStrPtr text, in CStrArray buttons);
+};

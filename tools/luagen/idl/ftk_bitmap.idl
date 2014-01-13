@@ -1,0 +1,12 @@
+#include "ftk_typedef.idl"
+
+interface FtkBitmap
+{
+	FtkBitmapPtr ftk_bitmap_create(in int w, in int h, in FtkColor clear_color);
+	int          ftk_bitmap_width(in FtkBitmapPtr thiz);
+	int          ftk_bitmap_height(in FtkBitmapPtr thiz);
+	FtkColorPtr  ftk_bitmap_lock(in FtkBitmapPtr thiz);
+	void         ftk_bitmap_unlock(in FtkBitmapPtr thiz);
+	void         ftk_bitmap_ref(in FtkBitmapPtr thiz);
+	void         ftk_bitmap_unref(in FtkBitmapPtr thiz);
+};

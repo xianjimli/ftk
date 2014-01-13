@@ -1,0 +1,18 @@
+#include "ftk_typedef.idl"
+
+interface FtkWndManager
+{
+	Ret  ftk_wnd_manager_restack(in FtkWndManagerPtr thiz, in FtkWidgetPtr window, in int offset);
+	Ret  ftk_wnd_manager_grab(in FtkWndManagerPtr thiz, in FtkWidgetPtr window);
+	Ret  ftk_wnd_manager_ungrab(in FtkWndManagerPtr thiz, in FtkWidgetPtr window);
+	Ret  ftk_wnd_manager_add(in FtkWndManagerPtr thiz, in FtkWidgetPtr window);
+	Ret  ftk_wnd_manager_remove(in FtkWndManagerPtr thiz, in FtkWidgetPtr window);
+	Ret  ftk_wnd_manager_update(in FtkWndManagerPtr thiz);
+	Ret  ftk_wnd_manager_get_work_area(in FtkWndManagerPtr thiz, in FtkRectPtr rect);
+	Ret  ftk_wnd_manager_queue_event(in FtkWndManagerPtr thiz, in FtkEventPtr event);
+	Ret  ftk_wnd_manager_dispatch_event(in FtkWndManagerPtr thiz, in FtkEventPtr event);
+	Ret  ftk_wnd_manager_add_global_listener(in FtkWndManagerPtr thiz, in FtkListenerFunc listener);
+	Ret  ftk_wnd_manager_remove_global_listener(in FtkWndManagerPtr thiz, in FtkListenerFunc listener);
+	void ftk_wnd_manager_destroy(in FtkWndManagerPtr thiz);
+};
+

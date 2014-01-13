@@ -1,0 +1,15 @@
+#include "ftk_typedef.idl"
+
+interface FtkListModel
+{
+	void ftk_list_model_ref(in FtkListModelPtr thiz);
+	void ftk_list_model_unref(in FtkListModelPtr thiz);
+	Ret ftk_list_model_enable_notify(in FtkListModelPtr thiz);
+	Ret ftk_list_model_disable_notify(in FtkListModelPtr thiz);
+	Ret ftk_list_model_add(in FtkListModelPtr thiz, in FtkListItemInfoPtr item);
+	Ret ftk_list_model_remove(in FtkListModelPtr thiz, in size_t index);
+	Ret ftk_list_model_reset(in FtkListModelPtr thiz);
+	int ftk_list_model_get_total(in FtkListModelPtr thiz);
+	Ret ftk_list_model_get_data(in FtkListModelPtr thiz, in size_t index, out FtkListItemInfoPtr ret);
+	void ftk_list_model_destroy(in FtkListModelPtr thiz);
+};

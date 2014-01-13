@@ -1,0 +1,72 @@
+#include "ftk_typedef.idl"
+
+interface FtkWidget
+{
+	int ftk_widget_type(in FtkWidgetPtr thiz);
+	int ftk_widget_top(in FtkWidgetPtr thiz);
+	int ftk_widget_left(in FtkWidgetPtr thiz);
+	int ftk_widget_top_abs(in FtkWidgetPtr thiz);
+	int ftk_widget_left_abs(in FtkWidgetPtr thiz);
+	int ftk_widget_top_in_window(in FtkWidgetPtr thiz);
+	int ftk_widget_left_in_window(in FtkWidgetPtr thiz);
+	int ftk_widget_width(in FtkWidgetPtr thiz);
+	int ftk_widget_height(in FtkWidgetPtr thiz);
+	int ftk_widget_is_insensitive(in FtkWidgetPtr thiz);
+	int ftk_widget_is_visible(in FtkWidgetPtr thiz);
+	int ftk_widget_is_focused(in FtkWidgetPtr thiz);
+	int ftk_widget_is_active(in FtkWidgetPtr thiz);
+	int ftk_widget_id(in FtkWidgetPtr thiz);
+	Ret ftk_widget_update(in FtkWidgetPtr thiz);
+	FtkGcPtr ftk_widget_get_gc(in FtkWidgetPtr thiz);
+	FtkCanvasPtr ftk_widget_canvas(in FtkWidgetPtr thiz);
+	int ftk_widget_has_attr(in FtkWidgetPtr thiz, in int attr);
+	int ftk_widget_state(in FtkWidgetPtr thiz);
+	voidPtr ftk_widget_user_data(in FtkWidgetPtr thiz);
+	CStrPtr ftk_widget_get_text(in FtkWidgetPtr thiz);
+	Ret ftk_widget_invalidate(in FtkWidgetPtr thiz);
+
+	void ftk_widget_show(in FtkWidgetPtr thiz, in int visible);
+	void ftk_widget_show_all(in FtkWidgetPtr thiz, in int visible);
+	void ftk_widget_set_visible(in FtkWidgetPtr thiz, in int visible);
+	void ftk_widget_move(in FtkWidgetPtr thiz, in int x, in int y);
+	void ftk_widget_resize(in FtkWidgetPtr thiz, in int width, in int height);
+	void ftk_widget_move_resize(in FtkWidgetPtr thiz, in int x, in int y, in int width, in int height);
+	void ftk_widget_set_type(in FtkWidgetPtr thiz, in int type);
+	void ftk_widget_set_insensitive(in FtkWidgetPtr thiz, in int insensitive);
+	void ftk_widget_set_focused(in FtkWidgetPtr thiz, in int focused);
+	void ftk_widget_set_active(in FtkWidgetPtr thiz, in int active);
+	void ftk_widget_set_id(in FtkWidgetPtr thiz, in int id);
+	void ftk_widget_set_canvas(in FtkWidgetPtr thiz, in FtkCanvasPtr canvas);
+	void ftk_widget_set_parent(in FtkWidgetPtr thiz, in FtkWidgetPtr parent);
+	void ftk_widget_set_text(in FtkWidgetPtr thiz, in CStrPtr text);
+	void ftk_widget_set_font(in FtkWidgetPtr thiz, in CStrPtr font_desc);
+	void ftk_widget_set_font_size(in FtkWidgetPtr thiz, in int font_size);
+	void ftk_widget_append_child(in FtkWidgetPtr thiz, in FtkWidgetPtr child);
+	void ftk_widget_append_sibling(in FtkWidgetPtr thiz, in FtkWidgetPtr next);
+	void ftk_widget_remove_child(in FtkWidgetPtr thiz, in FtkWidgetPtr child);
+	void ftk_widget_set_attr(in FtkWidgetPtr thiz, in int attr);
+	void ftk_widget_unset_attr(in FtkWidgetPtr thiz, in int attr);
+	void ftk_widget_set_user_data(in FtkWidgetPtr thiz, in FtkDestroyFunc destroy);
+	void ftk_widget_set_gc(in FtkWidgetPtr thiz, in int state, in FtkGcPtr gc);
+	void ftk_widget_reset_gc(in FtkWidgetPtr thiz, in int state, in FtkGcPtr gc);
+	void ftk_widget_set_event_listener(in FtkWidgetPtr thiz, in FtkEventListenerFunc listener);
+
+	FtkWidgetPtr ftk_widget_toplevel(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_parent(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_prev(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_next(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_child(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_last_child(in FtkWidgetPtr thiz);
+	FtkWidgetPtr ftk_widget_lookup(in FtkWidgetPtr thiz, in int id);
+
+	void ftk_widget_paint(in FtkWidgetPtr thiz, in FtkRectPtr rects, in int rect_nr);
+	void ftk_widget_destroy(in FtkWidgetPtr thiz);
+
+	void ftk_widget_ref(in FtkWidgetPtr thiz);
+	void ftk_widget_unref(in FtkWidgetPtr thiz);
+
+	Ret  ftk_widget_paint_self(in FtkWidgetPtr thiz, in FtkRectPtr rects, in int rect_nr);
+	void ftk_widget_ref_self(in FtkWidgetPtr thiz);
+	void ftk_widget_unref_self(in FtkWidgetPtr thiz);
+	Ret  ftk_widget_event(in FtkWidgetPtr thiz, in FtkEventPtr event);
+};

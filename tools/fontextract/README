@@ -1,0 +1,6 @@
+fontextract is used to extract bitmap font from truetype font file.
+
+it will not build by default, you should make it with command:
+make -f host.mk
+
+

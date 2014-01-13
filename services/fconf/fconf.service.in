@@ -1,0 +1,2 @@
+<service name="fbus.service.fconf" exec="@prefix@/bin/fconf_service" start_type="on_load" life_cycle="longlive"/>
+

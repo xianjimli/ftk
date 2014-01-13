@@ -1,0 +1,9 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkGroupBoxPtr;
+interface FtkGroupBox : FtkWidget
+{
+	FtkGroupBoxPtr ftk_group_box_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+	Ret  ftk_group_box_set_checked(in FtkWidgetPtr thiz, in FtkWidgetPtr radio);
+};
+

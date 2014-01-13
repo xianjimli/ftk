@@ -1,0 +1,3 @@
+<applications>
+<application name="filem" exec="app-filem" init="ftk_app_file_browser_create" />
+</applications>

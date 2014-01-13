@@ -1,0 +1,1 @@
+This folder contains any implementation parts that are specific to the x86 version of the library

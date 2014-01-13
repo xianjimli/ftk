@@ -1,0 +1,3 @@
+<applications>
+<application name="gallery" exec="gallery.lua" init="init" />
+</applications>

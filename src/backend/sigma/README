@@ -1,0 +1,72 @@
+bootloader 参数
+setxenv y.ipaddr "192.168.1.200"
+setxenv y.subnetmask "255.255.255.0"
+setxenv y.gateway "192.168.1.1"
+
+load -b tftp://192.168.1.100/vmlinux.bin 0x90020000
+go 0x90020000
+
+login之后执行：
+modprobe nfs
+ifconfig eth0 192.168.1.200 netmask 255.255.255.0
+mount -o nolock 192.168.1.100:/nfsroot/smp8634 /mnt/
+chroot /mnt
+mount proc
+modprobe llad
+modprobe em8xxx
+export EM8XXX_SERVER=":0"
+
+mknod /dev/mum0 c 126 0
+mknod /dev/em8xxx0 c 127 0
+mknod /dev/em8xxx1 c 127 1
+mknod /dev/em8xxx2 c 127 2
+mknod /dev/em8xxx3 c 127 3
+mknod /dev/em8xxx4 c 127 4
+mknod /dev/em8xxx5 c 127 5
+
+cd /targettools
+./xrpc -z
+./xrpc xrpc_xload_audio_ucode_SMP8634_2.8.3.0_facsprod.mips.nodts.bin
+./xrpc xrpc_xload_video_ucode_SMP8634_2.8.3.0_facsprod.mips.bin
+./xrpc xrpc_xload_demux_ucode_SMP8634_2.8.3.0_facsprod.mips.bin
+./xrpc xrpc_xload_irq_handler_SMP8634_2.8.3.0_facsprod.mips.bin
+./xrpc -ustart 2 4
+./xrpc -ustart 1 0
+./xrpc -ustart 1 1
+./xrpc -ustart 0 2
+./xrpc -ustart 0 3
+
+osdbuf_control -c1024x768 -Ftc:32bpp
+osdbuf_control -p
+
+export PATH=/mnt/bin/:/mnt/usr/bin/:$PATH
+export LD_LIBRARY_PATH=/mnt/lib/:/mnt/usr/lib/
+
+modprobe em8xxxfb `osdbuf_control -p`
+
+setenv start "net init; load -b tftp://192.168.1.100/zbimage-linux-xrpc 0xb0100000; xrpc 0xb01000a0; load zbf 0xb3000000; go"
+setxenv a.linux_cmd "console=ttyS0 nfsroot=192.168.1.100:/nfsroot/smp8634 ip=192.168.1.200 root=/dev/nfs rw"
+
+编译内核：
+cd smp86xx_rootfs_2.8.3.0
+source rootfs-path.env
+
+cd smp86xx_toolchain_2.8.3.0/
+source toolchain-path.env
+
+cd smp86xx_kernel_source_2.8.3.0/
+make kernel-source-2.6.15
+
+cd linux-2.6.15
+make ARCH=mips CROSS_COMPILE=mipsel-linux-
+make vmlinux.bin
+
+编译MRU
+cd mrua_SMP8634_2.8.3.0_GCC4_dev.mips/
+source MRUA.env
+export UCLINUX_KERNEL=/home/smp/smp86xx_kernel_source_2.8.3.0/linux-2.6.15
+make kernel
+make apps
+
+modprobe em8xxxfb videomemory=0x7f99a538 videomemorysize=25165824 palette=0x79000 mode=1024:768:32
+

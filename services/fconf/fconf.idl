@@ -1,0 +1,14 @@
+typedef long int;
+typedef long Ret;
+typedef long String;
+
+interface FConf
+{
+	Ret Lock();
+	Ret Unlock();
+	Ret Remove(in String xpath);
+	Ret Set(in String xpath, in String value);
+	Ret Get(in String xpath, out String value);
+	Ret GetChildCount(in String xpath, out int count);
+	Ret GetChild(in String xpath, in int index, out String child);
+};

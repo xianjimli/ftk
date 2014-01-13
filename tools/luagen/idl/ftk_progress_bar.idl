@@ -1,0 +1,9 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkProgressBarPtr;
+interface FtkProgressBar : FtkWidget
+{
+	FtkProgressBarPtr ftk_progress_bar_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+	Ret ftk_progress_bar_set_percent(in FtkWidgetPtr thiz, in int percent);
+	int ftk_progress_bar_get_percent(in FtkWidgetPtr thiz);
+};

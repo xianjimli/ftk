@@ -1,0 +1,18 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkScrollBarPtr;
+interface FtkScrollBar : FtkWidget
+{
+	FtkScrollBarPtr ftk_scroll_bar_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+	Ret ftk_scroll_bar_set_param(in FtkWidgetPtr thiz, in int value, in int max_value, in int page_delta);
+	Ret ftk_scroll_bar_set_listener(in FtkWidgetPtr thiz, in FtkWidgetListenerFunc listener);
+	int ftk_scroll_bar_get_value(in FtkWidgetPtr thiz);
+	int ftk_scroll_bar_get_max_value(in FtkWidgetPtr thiz);
+
+	Ret ftk_scroll_bar_inc(in FtkWidgetPtr thiz);
+	Ret ftk_scroll_bar_dec(in FtkWidgetPtr thiz);
+	Ret ftk_scroll_bar_pageup(in FtkWidgetPtr thiz);
+	Ret ftk_scroll_bar_pagedown(in FtkWidgetPtr thiz);
+	Ret ftk_scroll_bar_set_value(in FtkWidgetPtr thiz, in int value);
+};
+

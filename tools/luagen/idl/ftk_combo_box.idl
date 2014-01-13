@@ -1,0 +1,10 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkComboBoxPtr;
+interface FtkComboBox : FtkWidget
+{
+	FtkComboBoxPtr ftk_combo_box_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+	CStrPtr ftk_combo_box_get_text(in FtkWidgetPtr thiz);
+	Ret ftk_combo_box_set_text(in FtkWidgetPtr thiz, in CStrPtr text);
+	Ret ftk_combo_box_append(in FtkWidgetPtr thiz, in FtkBitmapPtr icon, in CStrPtr text);
+};

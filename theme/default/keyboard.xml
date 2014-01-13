@@ -1,0 +1,110 @@
+<keyboard min_width="240" min_height="160" views="2">
+<view rows="5" bg="key_board_bg.png" cell_bg_image[normal]="key_board_btn_normal.png" 
+	cell_bg_image[active]="key_board_btn_active.png">
+	<row cols="3" height_weight="10">
+		<cell text="" action="candidate(prev)" width_weight="1" 
+			icon="key_board_arrow_left.png"/>
+		<cell text=""  action="candidate(text)" width_weight="8" 
+			bg_image[normal]="key_board_candidates_area_bg.png" 
+			bg_image[active]="key_board_candidate_hl_bg.png" />
+		<cell text="" action="candidate(next)" width_weight="1"
+			icon="key_board_arrow_right.png"/>
+	</row>
+	
+	<row cols="10" height_weight="10">
+		<cell text="Q" action="send_key(Q)" width_weight="1"/>
+		<cell text="W" action="send_key(W)" width_weight="1"/>
+		<cell text="E" action="send_key(E)" width_weight="1"/>
+		<cell text="R" action="send_key(R)" width_weight="1"/>
+		<cell text="T" action="send_key(T)" width_weight="1"/>
+		<cell text="Y" action="send_key(Y)" width_weight="1"/>
+		<cell text="U" action="send_key(U)" width_weight="1"/>
+		<cell text="I" action="send_key(I)" width_weight="1"/>
+		<cell text="O" action="send_key(O)" width_weight="1"/>
+		<cell text="P" action="send_key(P)" width_weight="1"/>
+	</row>
+	<row cols="9" height_weight="10">
+		<cell text="A" action="send_key(A)" width_weight="1"/>
+		<cell text="S" action="send_key(S)" width_weight="1"/>
+		<cell text="D" action="send_key(D)" width_weight="1"/>
+		<cell text="F" action="send_key(F)" width_weight="1"/>
+		<cell text="G" action="send_key(G)" width_weight="1"/>
+		<cell text="H" action="send_key(H)" width_weight="1"/>
+		<cell text="J" action="send_key(J)" width_weight="1"/>
+		<cell text="K" action="send_key(K)" width_weight="1"/>
+		<cell text="L" action="send_key(L)" width_weight="1"/>
+	</row>
+	<row cols="8" height_weight="10">
+		<cell text="Z" action="send_key(Z)" width_weight="1"/>
+		<cell text="X" action="send_key(X)" width_weight="1"/>
+		<cell text="C" action="send_key(C)" width_weight="1"/>
+		<cell text="V" action="send_key(V)" width_weight="1"/>
+		<cell text="B" action="send_key(B)" width_weight="1"/>
+		<cell text="N" action="send_key(N)" width_weight="1"/>
+		<cell text="M" action="send_key(M)" width_weight="1"/>
+		<cell text="" action="send_key(BACKSPACE)" width_weight="1" icon="key_board_delete.png"/>
+	</row>
+	<row cols="5" height_weight="10">
+		<cell text="ZH" action="switch_view(1,-1)" width_weight="1"/>
+		<cell text="123." action="switch_view(1)" width_weight="1"/>
+		<cell text=" " action="send_key( )" width_weight="1" icon="key_board_space.png"/>
+		<cell text="" action="switch_view(1)" width_weight="1" icon="key_board_shift_off.png"/>
+		<cell text="" action="send_key(ENTER)" width_weight="1" icon="key_board_enter.png"/>
+	</row>
+</view>
+
+<view rows="5" bg="key_board_bg.png" cell_bg_image[normal]="key_board_btn_normal.png" 
+	cell_bg_image[active]="key_board_btn_active.png">
+	<row cols="3" height_weight="10">
+		<cell text="" action="candidate(prev)" width_weight="1" 
+			icon="key_board_arrow_left.png"/>
+		<cell text=""  action="candidate(text)" width_weight="8" 
+			bg_image[normal]="key_board_candidates_area_bg.png" 
+			bg_image[active]="key_board_candidate_hl_bg.png" />
+		<cell text="" action="candidate(next)" width_weight="1"
+			icon="key_board_arrow_right.png"/>
+	</row>
+	
+	<row cols="10" height_weight="10">
+		<cell text="q" action="send_key(q)" width_weight="1"/>
+		<cell text="w" action="send_key(w)" width_weight="1"/>
+		<cell text="e" action="send_key(e)" width_weight="1"/>
+		<cell text="r" action="send_key(r)" width_weight="1"/>
+		<cell text="t" action="send_key(t)" width_weight="1"/>
+		<cell text="y" action="send_key(y)" width_weight="1"/>
+		<cell text="u" action="send_key(u)" width_weight="1"/>
+		<cell text="i" action="send_key(i)" width_weight="1"/>
+		<cell text="o" action="send_key(o)" width_weight="1"/>
+		<cell text="p" action="send_key(p)" width_weight="1"/>
+	</row>
+	<row cols="9" height_weight="10">
+		<cell text="a" action="send_key(a)" width_weight="1"/>
+		<cell text="s" action="send_key(s)" width_weight="1"/>
+		<cell text="d" action="send_key(d)" width_weight="1"/>
+		<cell text="f" action="send_key(f)" width_weight="1"/>
+		<cell text="g" action="send_key(g)" width_weight="1"/>
+		<cell text="h" action="send_key(h)" width_weight="1"/>
+		<cell text="j" action="send_key(j)" width_weight="1"/>
+		<cell text="k" action="send_key(k)" width_weight="1"/>
+		<cell text="l" action="send_key(l)" width_weight="1"/>
+	</row>
+	<row cols="10" height_weight="10">
+		<cell text="z" action="send_key(z)" width_weight="1"/>
+		<cell text="x" action="send_key(x)" width_weight="1"/>
+		<cell text="c" action="send_key(c)" width_weight="1"/>
+		<cell text="v" action="send_key(v)" width_weight="1"/>
+		<cell text="b" action="send_key(b)" width_weight="1"/>
+		<cell text="n" action="send_key(n)" width_weight="1"/>
+		<cell text="m" action="send_key(m)" width_weight="1"/>
+		<cell text="" action="send_key(BACKSPACE)" width_weight="1" icon="key_board_delete.png"/>
+	</row>
+	<row cols="5" height_weight="10">
+		<cell text="EN" action="switch_view(0,0)" width_weight="1"/>
+		<cell text="123." action="switch_view(1)" width_weight="1"/>
+		<cell text=" " action="send_key( )" width_weight="1" icon="key_board_space.png"/>
+		<cell text="" action="switch_view(0)" width_weight="1" icon="key_board_shift_off.png"/>
+		<cell text="" action="send_key(ENTER)" width_weight="1" icon="key_board_enter.png"/>
+	</row>
+</view>
+</keyboard>
+

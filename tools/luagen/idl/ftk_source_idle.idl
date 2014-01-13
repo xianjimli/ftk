@@ -1,0 +1,6 @@
+#include "ftk_source.idl"
+
+interface FtkSourceIdle : FtkSource
+{
+	FtkSourcePtr ftk_source_idle_create(in FtkIdleFunc action);
+};

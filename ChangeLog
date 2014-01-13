@@ -1,0 +1,10 @@
+2009-10-17 Li XianJing <xianjimli@hotmail.com>
+	* abstract window manager to a interface.
+
+2009-10-16 Li XianJing <xianjimli@hotmail.com>
+    * add dash line
+
+2009-10-15 Li XianJing <xianjimli@hotmail.com>
+	* refactor main loop.
+	* add modal dialog support.
+

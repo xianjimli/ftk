@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+interface FtkIconCache
+{
+	FtkIconCachePtr ftk_icon_cache_create(in CStrArray root_path, in CStrPtr rel_path);
+	FtkBitmapPtr ftk_icon_cache_load(in FtkIconCachePtr thiz, in CStrPtr filename);
+	void ftk_icon_cache_destroy(in FtkIconCachePtr thiz);
+};

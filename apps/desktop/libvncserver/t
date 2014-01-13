@@ -1,0 +1,16 @@
+$(srcdir)/lzoconf.h \
+$(srcdir)/d3des.h \
+$(srcdir)/zrletypes.h \
+$(srcdir)/rfb/rfb.h \
+$(srcdir)/rfb/rfbint.h \
+$(srcdir)/rfb/rfbregion.h \
+$(srcdir)/rfb/rfbconfig.h \
+$(srcdir)/rfb/keysym.h \
+$(srcdir)/rfb/rfbproto.h \
+$(srcdir)/rfb/rfbclient.h \
+$(srcdir)/rfb/default8x16.h \
+$(srcdir)/private.h \
+$(srcdir)/zrlepalettehelper.h \
+$(srcdir)/zrleoutstream.h \
+$(srcdir)/scale.h \
+$(srcdir)/minilzo.h \

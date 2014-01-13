@@ -1,0 +1,10 @@
+#include "ftk_typedef.idl"
+
+interface FtkMmap
+{
+	FtkMmapPtr ftk_mmap_create(in CStrPtr filename, in size_t offset, in size_t size);
+	voidPtr    ftk_mmap_data(in FtkMmapPtr thiz);
+	size_t     ftk_mmap_length(in FtkMmapPtr thiz);
+	void       ftk_mmap_destroy(in FtkMmapPtr thiz);
+};
+

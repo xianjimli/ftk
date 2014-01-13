@@ -1,0 +1,17 @@
+o add tab widget
+o add file browser widget
+o add opengles backend
+o port to android
+o port to rt-thread
+o port to wince
+o port to iphone
+o more documation.
+o multi font size supported.
+o re-implement window animation.
+o performace and memory optimization.
+o use gb2312 font to replace unicode fnt.
+o use google pinyin as default input method.
+o re-create vs2008 project, and port desktop to windows.
+o re-implement default font to minimized the memory size.
+o change font_canvas to interface, so it can be optimized on different
+platform.

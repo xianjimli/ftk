@@ -1,0 +1,70 @@
+1.download android source and make sdk.
+  mkdir android-eclair
+  cd android-eclair/
+  repo init -u git://android.git.kernel.org/platform/manifest.git -b eclair
+  repo sync
+  make sdk
+  cd ..
+  unzip android-eclair/out/host/linux-x86/sdk/android-sdk_eng.lixianjing_linux-x86.zip
+  mv android-sdk_eng.lixianjing_linux-x86 ftk_emu
+
+recompile it:
+  cd -;make
+
+2.unpack platforms/android-1.5/images/ramdisk.img in SDK, edit init.rc to forbit system server.
+  
+  cd ftk_emu/platforms/android-Eclair/images/
+
+unpack ramdisk:
+  mv ramdisk.img ramdisk.img.gz;
+  gunzip ramdisk.img.gz;
+  mkdir initrd;
+  cd initrd;
+  cpio -i <../ramdisk.img
+
+edit init.rc, comment this following lines:
+#service zygote /system/bin/app_process -Xzygote /system/bin --zygote
+--start-system-server
+#    socket zygote stream 666
+#    onrestart write /sys/android_power/request_state wake
+#    onrestart write /sys/power/state on
+#    onrestart restart media
+
+repack ramdisk.img
+  find . | cpio -c -o > ../ramdisk
+  cd ..
+  gzip ramdisk
+  mv ramdisk.gz ramdisk.img
+
+3.edit ftk/src/Android-build.sh, set the ANDROID_ROOT to android source dir.
+the run Android-build.sh
+
+  ./Android-build.sh
+
+4.create a virtual machine
+  ./ftk_emu/tools/android create avd -t 1 -n ftk
+  ./ftk_emu/tools/emulator -avd ftk
+
+5.upload demo* to /data
+  enter android-eclair directory, then:
+  for f in out/target/product/generic/system/bin/demo_*;do adb push $f
+/data;done
+
+6.upload data/theme/testdata to /data/ftk
+  entry ftk directory, then
+  adb shell mkdir /data/ftk 
+  adb shell mkdir /data/ftk/base
+  adb shell mkdir /data/ftk/base/data
+  adb shell mkdir /data/ftk/base/theme
+  adb shell mkdir /data/ftk/base/theme/default
+  for f in theme/default/*;do adb push $f /data/ftk/base/theme/default;done
+  for f in data/*;do adb push $f /data/ftk/base/data;done
+  for f in src/demos/*.xul;do adb push $f /data/ftk/;done
+  ...
+
+7.run the demos.
+  adb shell
+  cd /data
+  chmod 775 demo*
+  ./demo_button
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window value="Desktop" attr="$FTK_ATTR_IGNORE_CLOSE" bg_image[normal]="icons/paper.jpg">
+	<button id="100" x="0" y="0" w="56" h="$wh" attr="$FTK_ATTR_BG_CENTER"
+		bg_image[normal]="icons/tray_handle_normal-h.png"
+		bg_image[focused]="icons/tray_handle_selected-h.png"
+		bg_image[active]="icons/tray_handle_pressed-h.png" 
+		bg_image[disable]="icons/tray_handle_normal-h.png" 
+		/>
+</window>

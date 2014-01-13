@@ -1,0 +1,431 @@
+Release Notes
+=============
+
+This document collects changes on a release to release base. For open known issues, please refer to
+the bug database on SourceForge. 
+
+Version 1.1.0
+-------------
+
+This version includes all the changes necessary for the submission of Vincent to the
+OpenGL ES conformance procedure. Here are the details for the submitted configuration:
+
+Vincent OpenGL ES 1.1 Common Lite
+---------------------------------
+
+CPUs:		ARMv4
+
+OS:		Windows Mobile 2003
+
+API pipeline:	GL_VENDOR       "Hans-Martin Will"
+		GL_RENDERER	"Software"
+		GL_VERSION	"OpenGL ES-CL 1.1 Software JIT"
+			
+Display configuration:  48 x 48, 16bpp
+
+As a note, even though Vincent implements the API defined by the common profile, it
+is not implemented using floating point arithmetic, but rather converts floats to
+fixed values through a compatibility layer. In external executions, the library
+still passes all but one test for the common profile: The test that verifies 
+retrieval of state variables. This test fails due to loss of precision due to internal storage
+of certain parameters as fixed vs. floating point values.
+
+
+Version 0.99
+------------
+
+Purpose of this release is preparation of the submission of the conformance test results for Vincent.
+
+This version addresses the following issues:
+
+1008789 - Enhanced texture processing according to OpenGL 1.5 spec.
+1284482 - User Clip Plane test failed
+1284483 - Buffer Objects test failed
+1284484 - Matrix Query test failed
+1284485 - Must Pass test failed
+1378544 - Horizontal and Vertical Line test failed.
+
+
+Version 0.84
+------------
+
+This is a build to address the pointer problem listed below. It has *not* been fully regression tested 
+against the conformance test suite, even though it is expected to be mostly stable. If you have any problems,
+please revert to version 0.83.
+
+This version addresses the following issues:
+
+1207580 - Freeing invalid pointer
+1209681 - Derivatives for mipmap selection swapped
+
+
+Version 0.83
+------------
+
+For XScale builds, the Intel Graphics Performance Primitives are no longer needed by default. If you
+want to use this library, simply define the constant EGL_USE_GPP in your compiler options.
+
+OGLES.h now contains several configuration parameters that allow for fine-tuning the behavior of the
+library being built. See also README.txt for updated information.
+
+This version addresses the following issues:
+
+1030170 - Support more than one texture unit
+1008793 - Static and Dynamic state queries
+1031202 - Bitmap handle leak
+1031201 - Device context leak
+1028995 - Clip planes cannot be disabled
+1001371 - Use CLZ for XScale and retire GPP
+1033799 - Under-/overflow in fog calculation
+1034326 - use CLZ in emit_unary_log2 for XScale builds
+1034149 - Addressing mode for min/max operations
+1001373 - optimize register allocation
+
+
+Version 0.82
+------------
+
+Version 0.82 is again a significant milestone build for Vincent. It incorporates the following enhancements:
+
+0.) In addition to the common lite profile, the library has been tested against the OpenGL ES 1.0
+    conformance test for the Common profile. For this reason, the suffix of the library has been
+    changed from _CL to _CM. In addition, the naming conventions for the library file names have
+    been accommodated for, which means that now the library file is called libGLES_CM.dll.
+ 
+1.) For ARM, all rasterization code is now generated using the JIT, including points and lines
+
+2.) A first series of performance enhancements has been included
+
+3.) In preparation for the OpenGL ES Coding Challenge, a series of new features from the OpenGL ES 1.1 API
+    specification have been added:
+    
+    - Point sprites and point size arrays
+    - Automatic mipmap generation as core functionality
+    - Buffer objects
+    - Vertex skinning
+    - User-defined clip planes
+    
+Please note that the conformance test suite for OpenGL ES 1.1 has not been released yet, which means that
+these new features have not undergone the kind of testing that all previous features have. However, the
+library is fully regression tested against the 1.0 conformance test suite.
+
+The following areas from the 1.1 specification have not been addressed yet:
+
+1.) Improved texture functionality including the availability of at least 2 texture units.
+2.) Full support for static and dynamic state queries.
+
+This version addresses the following issues:
+
+ 960546 - Validate all error conditions for all gl... entry points
+ 970894 - glDrawArrays/glDrawElements should validate arrays
+1010509 - specular exponent in material not initialized
+1010508 - EGL_Power on x86 buggy
+1010510 - specular color incorrect
+1010824 - Provide utility function to save screenshots
+1011519 - Improve rasterizer state comparisons
+1001369 - Convert point rasterization to JIT
+1011035 - Convert line rasterization to JIT
+1001370 - fixed functions
+1014020 - Fog Linear test failed.
+1014019 - Blend test failed.
+1014018 - LogicOp Function test failed.
+1014016 - Stencil Plane Operation test failed.
+1014017 - Stencil Plane Function test failed.
+1015029 - Linear fog efficiency
+1008788	- Auto mipmap generation
+1008786 - Buffer Objects
+1012401 - Optimize SelectArrayElement
+1008792 - Enhanced point sprites and point sprite arrays
+1008791 - User-defined clip planes
+1025167 - glColorPointer with byte coordinates
+1008790 - Vertex skinning functionality
+
+
+Version 0.81
+------------
+
+This version adds the redbook examples that are distributed with the reference implementation. To
+do so, a version of the ug library (the mini GLUT included in the reference implementation) has
+been added.
+
+In addition, a couple of defects that showed up in those examples have been addressed:
+
+ 863654 - Create specialized pipeline functions for geometry stage 
+ 960543 - BindTexture should record an error for invalid targets
+1001348 - By default, smooth shading should be enabled
+1001352 - movelight example is rendered incorrectly
+1001351 - alpha3d example does not render correctly
+1001354 - Stray red pixels in examples
+1001356 - Polyoff example shows stippling
+1008798 - Clipping issue invovling points at infinity
+1001825 - Mesh created by ugWireSphere/ugSolidSphere is iffy
+1001882	- eglGetError return value
+
+
+Version 0.80
+------------
+
+This version constitutes a major milestone for Vincent. First of all, Vincent has become
+feature complete and can pass the full OpenGL ES conformance test in internal runs. From this
+point on, all releases of Vincent will be fully regression tested against the conformance
+test.
+
+Second, first steps towards support for Symbian has been added; specifically support for implementations
+of Nokia's Series 60 platform. The implementations is not fully working yet, but at least will compile
+without errors. If you are interested in completing this port, please contact the project administrator.
+
+This version addresses the following issues:
+
+980877 - Mipmaps Selection test failed.
+980878 - Mipmaps Interpolation test failed.
+996378 - Color buffer is effectively 16-bit
+996379 - Trap exceptions when context not set.
+997772 - compressed NULL texture fails.
+
+Notes:
+
+1.) Even though this build passes the mipmap interpolation test from the conformance test, tri-linear
+mipmapping is still not implemented yet. This should become available soon.
+
+2.) Users of previous builds of this library will notice a substantial reduction in performance (~15%)
+compared to previous builds when using mipmapping. This is due to the fact that the current build will
+perform mipmap selection on a per-pixel base; more precisely, per linearly interpolated sub-span of
+each scan line. The plan is to introduce several configurations, which will be either fully-conformant
+but slower, or not fully conformant but faster.
+
+3.) While the current build passes the conformance test, the current build still uses different
+rendering paths for point and line rasterization (non-JIT) than for triangle rasterization (JIT). The
+upcoming series of builds will convert point and line rasterization to use the JIT. Besides increased
+performance especially for rendering lines the most significant gain will be a reliable assessment of
+the correctness of this implementation by using a single path for all raster operations.
+
+
+Version 0.79
+------------
+
+This build features a new rasterizer for triangles. Most notably, the new rasterizer fully
+implements the plane equation approach with pixel and texel correct stepping of all
+parameters.
+
+To fully pass the conformance test, the base internal format for RGBA textures has been changed from
+RGBA5551 to RGBA8888. The base internal format can easily be set to the other supported formats by
+changing the return value of TextureFormatFromEnum in ContextTexture.cpp.
+
+The remaining issues with the conformance test are regardng mipmap selection and mipmap interpolation.
+Currently, Vincent uses mipmap selection on a per-triangle base as is common for most rasterizers.
+For those two remaining tests, mipmap selection will have to be done on a per-pixel base based
+on the current texture gradients. The plan is to create two EGL Config entries, one marked as
+slow (but conformant and using per pixel mipmap selection), the other being marked as non-conformant 
+(and using per-triangle mip mapping).
+
+This version addresses the following issues:
+
+961343 - Use DDA for triangle edges
+970915 - Matrix Stack test failed
+980874 - Texture Edge Clamp test failed.
+970910 - Triangle Tile test failed.
+980879 - Packed Pixels test failed.
+980882 - Copy Texture test failed. For this issue, there still needs to be a clarification 
+	 from the review board concerning the minimum bit depth required for textures.
+980876 - Compressed Paletted Texture test failed.	 
+987381 - Line clipper bug.
+
+
+Version 0.78
+------------
+
+This build addresses all known failures of the conformance test that are not related to
+texture sampling. Notably, it passes the lightning, fog and blending tests.
+
+This version addresses the following issues:
+
+970897 - Vertex Order test (Test number #5) failed.
+970910 - Triangle Tile test failed
+970911 - Spotlight tests failed
+970912 - Blend test failed.
+970913 - Fog Linear test failed.
+970916 - Transformation Normal test failed.
+970918 - Fog Exponential test failed.
+970919 - Rescale Normal test failed.
+
+
+Version 0.77
+------------
+
+This version addresses the following issues:
+
+970914 - Read Format test failed.
+970901 - Color Ramp test failed
+970907 - LogicOp Function test failed.
+970902 - Stencil Plane Clear test failed.
+970903 - Stencil Plane Corners test failed.
+970905 - Stencil Plane Operation test failed.
+970908 - Point Rasterization test failed.
+970909 - Horizontal and Vertical Line test failed.
+970906 - Depth Buffer Clear test failed.
+970900 - Clip test failed.
+970899 - Transform Homogenous Coordinates test failed.
+968663 - Divide By Zero Test Hangs
+863637 - GL_OES_compressed_paletted_tex extension missing
+958796 - eglQueryString not implemented
+863638 - rescale normal vs. normalize
+864273 - PixelStorei is not implemented
+
+
+Version 0.76
+------------
+
+Key changes in this version of the library are tracked under the following tracker numbers:
+
+958793 - Create math library for non-XScale processors
+937679 - Employ plane equations for rasterization
+
+In addition, this version addresses the following issues:
+
+960542 - fragment processing for clearing missing/incorrect
+960937 - Pixel ownership test not implemented correctly
+958787 - GL_OES_query_matrix extension missing
+951114 - glLineWidth causes freeze
+958791 - eglCopyBuffers not implemented
+958797 - eglGetProcAddress not implemented
+958790 - Pixmap rendering surface not implemented
+
+
+Version 0.75 (beta)
+-------------------
+
+Vincent goes finally beta. The library is becoming sufficiently stable that I feel
+comfortable to advertise it to a larger user base. In addition, Vincent successfuly
+runs on Pocket PCs having StrongARM processors and Smartphones using TI OMAP processors.
+
+For the next point release, the plan is to rework the rasterizer to employ more of the
+ideas outlined in Hecker's artcile series on software rasterization (see link on web site).
+Also, now that a sufficiently sized set of regression tests is passed, I can finally
+address the overall performance issues that the library has. Especially the JIT has
+a huge performance potential once instruction re-ordering (both IR and on machine code 
+level) get incorporated. I just did not want to re-order instructions unless in-order
+execution was correct.
+
+I have been using the core parts of the OpenGL ES test suite to ensure a controlled level
+of quality for this release. I am excercising only the fixed point API as part of these
+tests. Note that these are internal runs executed on a Pocket PC with XScale porocessor. 
+There has not been an official submission of any tests results yet, and I do not claim
+any level of compliance with the OpenGL ES 1.0 API specification.
+
+
+
+OpenGL ES Coverage Test.
+Version 1.0 (2003/12/23)
+
+covgl passed.
+
+
+OpenGL ES Primitives Test.
+Version 1.0 (2003/12/23)
+
+primtest (fixed point) passed.
+
+
+OpenGL ES Conformance Test
+Version 1.0 (2003/12/23)
+
+Setup Report.
+    Verbose level = 1.
+    Random number seed = 32555.
+    Path inactive.
+
+Config Report.
+    Config ID = 1.
+    RGBA (5, 6, 5, 8).
+    Stencil (32).
+    Depth (32).
+
+Default State test passed.
+Must Pass test passed.
+
+Conform (fixed point) passed.
+******************** SUMMARY OF 'conform' RESULTS ********************
+SUMMARY: NO tests failed at any path level.
+SUMMARY: 1 conformant configs, 0 non-conformant configs.
+****************** END SUMMARY OF 'conform' RESULTS ******************
+
+
+
+
+Specifically, this version addresses the following issues:
+
+954678 - Line clipper does not handle degenerate configurations
+921584 - Line and point rendering possibly broken
+946772 - mustpass conformance test fails
+952667 - Polygon fill conventions need to be revised
+954677 - polycull test fails
+951117 - glTexParameterf causes an error 
+863629 - Lightning model is incomplete 
+949647 - SpecularColor test fails 
+949645 - Stencil test generates exception in code generator
+949644 - Texture functions fail in mustpass.c
+949642 - Scissor test not implemented for code generator
+864080 - PolygonOffset is not implemented
+944663 - Does not handle the case Z=0 properly
+937516 - Context::TexEnv target should be checked against GL_TEXTURE_ 
+937517 - bug in Light::AccumulateLight 
+937524 - EGL_Power should read switch (exponen >> EGL_PRECISION) 
+937676 - the material's backward facing color is not implemented  
+944269 - clear depth is not transformed 
+944267 - glOrtho matrix incorrect 
+944265 - Color to RGBA conversion swaps channels 
+943505 - glReadPixels incomplete
+942837 - Texture modulation does not work
+935473 - Add support for (Strong)ARM 
+921582 - Code generation does not support blending 
+921581 - Code generation does not support logic ops 
+938594 - glClearColorx "red" and "blue" seems to be swapped 
+
+
+Version 0.70a
+-------------
+
+This version incorporates critical fixes for 0.7:
+
+930264 - Texture loading raises an exception 
+930207 - enums incorrectly mapped to fixed 
+929529 - instruction selection raises exception 
+929528 - assertion raised in instruction selection 
+929526 - assertion failed after function cleanup 
+928068 - EGL coverage test fails 
+928046 - GL coverage test fails 
+923737 - glBindTexture can fail 
+863660 - Provide support for meshes (experimental)
+
+
+Version 0.7
+-----------
+
+This version is a major upgrade from version 0.2. Most notably, it provides a first version of the
+runtime compiler infrastructure that generates rasterization code on the fly based on the current
+settings.
+
+In addition, the following issues are addressed:
+
+864042 - Automatic Mipmap Generation
+863653 - Specialized rasterization functions (replace by runtime compiler)
+921405 - Clipping Broken
+
+
+Version 0.2
+-----------
+
+This version addresses the following issues:
+
+863630 - Backface culling missing
+863633 - Culling and clipping is missing 
+863632 - Initialization for multiple processes 
+863631 - Mipmapping still needs to be implemented 
+863640 - Depth coordinate now handled correctly
+863652 - Enhance performanced impact for stencil buffer on pipeline 
+
+
+Version 0.1
+-----------
+
+This is an initial release of the compiled library. Known issues logged into the bug database.

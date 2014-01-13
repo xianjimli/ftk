@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window value="Programs" attr="$FTK_ATTR_IGNORE_CLOSE|$FTK_ATTR_FULLSCREEN" anim_hint="applist_v" visible="1" bg_image[normal]="icons/paper.jpg">
+	<button id="100" x="0" y="0" w="$ww" h="56" visible="1" attr="$FTK_ATTR_BG_CENTER"
+		bg_image[normal]="icons/tray_handle_normal.png"
+		bg_image[focused]="icons/tray_handle_selected.png"
+		bg_image[active]="icons/tray_handle_pressed.png" 
+		bg_image[disable]="icons/tray_handle_normal.png" 
+		/>
+	<icon_view id="99" x="0" y="56" w="$ww" h="$wh-56" visible="1" value="72"/>
+</window>

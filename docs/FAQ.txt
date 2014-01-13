@@ -1,0 +1,25 @@
+Q: If my framebuffer device is not /dev/fb0, how can I choose different one?
+
+A: You should set the env variable FTK_FB_NAME to the device name. eg:
+   export FTK_FB_NAME=/dev/graphic/fb0
+
+Q: If my touchscreen device file is not /dev/input/event0, how can I choose
+different one?
+
+A: You should set the env variable FTK_TSLIB_FILE to the device name. eg:
+   export FTK_TSLIB_FILE=/dev/jz-ts
+
+Q: I use uclinux, mmap doesn't work well, what can I do?
+
+A: Add the following line to env.sh, and rebuild it.
+   export CFLAGS=-DFTK_FB_NOMMAP
+ 
+   uclinux doesn't support MAP_SHARED or MAP_PRIVATE with PROT_WRITE, we use
+   smem_start instead.
+
+Q: How to change the log level, so I can see the debug message.
+
+A: There are two ways to specify the log level:
+   1.Cammand line: --log-level=D|V|I|W|E
+   2.Config: log-level=D|V|I|W|E
+

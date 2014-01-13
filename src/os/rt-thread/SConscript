@@ -1,0 +1,162 @@
+import rtconfig
+Import('RTT_ROOT')
+from building import *
+
+ftk_app_src	= Split("""
+../../../../ftk_module.c
+../../../apps/desktop/main.c
+../../../apps/desktop/app_info.c
+""")
+
+ftk_src = Split("""
+../../ftk_file_browser.c
+../../ftk_file_system.c
+../../ftk_file_system_posix.c
+../../ftk_main_loop_select.c
+../../fontdata.c
+../../ftk.c
+../../ftk_allocator.c
+../../ftk_allocator_default.c
+../../ftk_allocator_profile.c
+../../ftk_animation_alpha.c
+../../ftk_animation.c
+../../ftk_animation_expand.c
+../../ftk_animation_scale.c
+../../ftk_animation_translate.c
+../../ftk_animation_trigger_default.c
+../../ftk_animation_trigger_silence.c
+../../ftk_interpolator_acc_decelerate.c
+../../ftk_interpolator_accelerate.c
+../../ftk_interpolator_bounce.c
+../../ftk_interpolator_decelerate.c
+../../ftk_interpolator_linear.c
+../../ftk_pairs.c
+../../ftk_params.c
+../../ftk_app_window.c
+../../ftk_bitmap.c
+../../ftk_bitmap_factory.c
+../../ftk_button.c
+../../ftk_canvas.c
+../../ftk_canvas_default.c
+../../ftk_check_button.c
+../../ftk_clipboard.c
+../../ftk_combo_box.c
+../../ftk_config.c
+../../ftk_dialog.c
+../../ftk_display.c
+../../ftk_display_mem.c
+../../ftk_display_rotate.c
+../../ftk_entry.c
+../../ftk_expr.c
+../../ftk_font.c
+../../ftk_font_desc.c
+../../ftk_font_manager.c
+../../ftk_font_default.c
+../../ftk_gesture.c
+../../ftk_globals.c
+../../ftk_icon_cache.c
+../../ftk_icon_view.c
+../../ftk_image.c
+../../ftk_image_bmp_decoder.c
+../../ftk_image_png_decoder.c
+../../ftk_image_jpeg_decoder.c
+../../ftk_input_method_manager.c
+../../ftk_input_method_preeditor.c
+../../ftk_input_method_preeditor_default.c
+../../ftk_label.c
+../../ftk_list_model_default.c
+../../ftk_list_render_default.c
+../../ftk_list_view.c
+../../ftk_log.c
+../../ftk_main_loop.c
+../../ftk_menu_item.c
+../../ftk_menu_panel.c
+../../ftk_message_box.c
+../../ftk_painter.c
+../../ftk_path.c
+../../ftk_popup_menu.c
+../../ftk_progress_bar.c
+../../ftk_group_box.c
+../../ftk_scroll_bar.c
+../../ftk_sources_manager.c
+../../ftk_source_idle.c
+../../ftk_source_primary.c
+../../ftk_source_timer.c
+../../ftk_sprite.c
+../../ftk_status_item.c
+../../ftk_status_panel.c
+../../ftk_tab.c
+../../ftk_text_buffer.c
+../../ftk_text_layout_normal.c
+../../ftk_text_view.c
+../../ftk_theme.c
+../../ftk_translator.c
+../../ftk_util.c
+../../ftk_wait_box.c
+../../ftk_widget.c
+../../ftk_window.c
+../../ftk_wnd_manager.c
+../../ftk_wnd_manager_default.c
+../../ftk_xml_parser.c
+../../ftk_xul.c
+../../ftk_dlfcn.c
+""")
+
+im_src = Split("""
+../../im/gpinyin/share/ngram.cpp 
+../../im/gpinyin/share/sync.cpp 
+../../im/gpinyin/share/spellingtrie.cpp 
+../../im/gpinyin/share/dicttrie.cpp 
+../../im/gpinyin/share/dictbuilder.cpp 
+../../im/gpinyin/share/spellingtable.cpp 
+../../im/gpinyin/share/splparser.cpp 
+../../im/gpinyin/share/searchutility.cpp 
+../../im/gpinyin/share/utf16char.cpp 
+../../im/gpinyin/share/mystdlib.cpp 
+../../im/gpinyin/share/utf16reader.cpp 
+../../im/gpinyin/share/userdict.cpp 
+../../im/gpinyin/share/matrixsearch.cpp 
+../../im/gpinyin/share/pinyinime.cpp 
+../../im/gpinyin/share/lpicache.cpp 
+../../im/gpinyin/share/dictlist.cpp 
+../../im/gpinyin/ftk/ftk_input_method_gpinyin.cpp
+""")
+
+linebreak_src = Split("""
+../../linebreak/linebreak.c
+../../linebreak/linebreakdata.c
+../../linebreak/linebreakdef.c
+""")
+
+rtthread_port_src = Split("""
+./ftk_mmap_rtthread.c
+./ftk_pipe_rtthread.c
+./ftk_rtthread.c
+./ftk_select_rtthread.c
+./ftk_input_method_chooser_rtthread.c
+../../backend/rt-thread/ftk_backend_rtthread.c
+../../backend/rt-thread/ftk_display_rtthread.c
+../../backend/rt-thread/ftk_source_touch.c
+../../backend/rt-thread/ftk_source_input.c
+""")
+
+# The set of source files associated with this SConscript file.
+src_local = ftk_src + linebreak_src + rtthread_port_src + ftk_app_src
+
+path = [RTT_ROOT + '/components/external/ftk/ftk/src',
+#	RTT_ROOT + '/components/external/ftk/ftk/src/im', 
+#	RTT_ROOT + '/components/external/ftk/ftk/src/im/gpinyin/include',
+#	RTT_ROOT + '/components/external/ftk/ftk/src/im/gpinyin/ftk',
+	RTT_ROOT + '/components/external/ftk/ftk/apps/common',
+	RTT_ROOT + '/components/external/ftk/ftk/src/os/rt-thread',
+	RTT_ROOT + '/components/external/ftk/ftk/src/linebreak',
+	RTT_ROOT + '/components/external/ftk/ftk/src/demos',	
+	RTT_ROOT + '/components/external/ftk/ftk/src/backend/rt-thread' ]
+
+group = DefineGroup('FTK', 
+    File(src_local), 
+    depend = ['RT_USING_FTK'], 
+    CCFLAGS = ' -DRT_THREAD', 
+    CPPPATH = path, LIBRARY= '')
+
+Return('group')

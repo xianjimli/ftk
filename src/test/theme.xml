@@ -1,0 +1,51 @@
+<theme name="android" >
+	<window bg[normal]="ffffffff" 
+		bg[focused]="ffffffff" 
+		bg[active]="ffffffff" 
+		bg[disable]="ffffffff" 
+		fg[normal]="ff000000" 
+		fg[focused]="ff000000" 
+		fg[active]="ff00000" 
+		fg[disable]="ff000000" />
+
+	<!--label bg is transparent-->
+	<label
+		fg[normal]="ff000000" 
+		fg[focused]="ff000000" 
+		fg[active]="ff00000" 
+		fg[disable]="ff000000" />
+	
+	<entry bg[normal]="ffffffff" 
+		bg[focused]="ffffffff" 
+		bg[active]="ffffffff" 
+		bg[disable]="ffaca899" 
+		fg[normal]="ff000000" 
+		fg[focused]="ff000000" 
+		fg[active]="ff00000" 
+		fg[disable]="ff000000" />
+	<progress_bar bg[normal]="ffffffff" 
+		bg[focused]="ffffffff" 
+		bg[active]="ffffffff" 
+		bg[disable]="ffaca899" 
+		fg[normal]="ff000000" 
+		fg[focused]="ff000000" 
+		fg[active]="ff00000" 
+		fg[disable]="ff000000" />
+
+	<button bg_image[normal]="Acrobat.png" 
+		bg_image[focused]="Chat.png" 
+		bg_image[active]="Flickr.png" 
+		bg_image[disable]="Flickr.png"
+		fg[normal]="ffff0000" 
+		fg[focused]="ff00ff00" 
+		fg[active]="ff0000ff" 
+		fg[disable]="ffff0000" />
+	<label bg[normal]="ffff0000" 
+		bg[focused]="ff00ff00" 
+		bg[active]="ff0000ff" 
+		bg[disable]="ffff0000" 
+		fg[normal]="ffff0000" 
+		fg[focused]="ff00ff00" 
+		fg[active]="ff0000ff" 
+		fg[disable]="ffff0000" />
+</theme>

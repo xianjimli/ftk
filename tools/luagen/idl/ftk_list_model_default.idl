@@ -1,0 +1,8 @@
+#include "ftk_list_model.idl"
+
+interface FtkListModelDefault : FtkListModel
+{
+	FtkListModelPtr ftk_list_model_default_create(in size_t init_nr);
+};
+
+

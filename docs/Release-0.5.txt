@@ -1,0 +1,23 @@
+1.Bug fix and optimization.
+2.Widgets improvements:
+  o entry supports tips.
+  o label supports alignment.
+  o listview supports marquee.
+  o progressbar support text information.
+3.VNC supported.
+4.Screen rotate.
+5.Gettext supported.
+6.Opengles supported.
+7.Unicode linebreak.
+8.Gui autotest tool.
+9.IPC supported(fbus).
+10.Config service(fconf).
+11.Filebrowser and filechooser.
+12.New applications(shell/filebrowser).
+13.More hardware supported.
+  o st7781.
+  o zoran TVBOX.
+  o qi-hardware ben.
+  o mini4020
+14.PSP supported.
+15.Documents

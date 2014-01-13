@@ -1,0 +1,51 @@
+ftk/README has described the general steps of building, here are some special
+configure options for FTK:
+
+--enable-cairo
+
+build with cairo support.
+
+--enable-bidi
+
+build with bidi support(NOT tested yet)
+
+--enable-opengles
+build with opengles support.
+
+--enable-tslib  
+
+build with tslib support, tslib is a library to handle touchscreen event, 
+if you has a resistive touchscreen, you should enable this option.
+
+--with-fontengine 
+
+there are two options: default and freetype, generally freetype is better
+choise, but if you don't want to depend on freetype, or freetype is
+unavailable, use default instead.
+
+--with-backend
+
+backend means how to display bitmap on the screen and how to get the input
+device events. there are three options now:
+
+linux-x11:WxH With this option, FTK will run on X11 for emulation. W and H is
+the width and height of the emulator. For exmaple, with the following value,
+it will create a emulation window with 320 pixels width and 480 pixels height.
+
+--with-backend=linux-x11:320x480
+
+linux-fb With this option, FTK will run on linux framebuffer, this is
+default value.
+
+linux-st7781 With this option, FTK will run on linux with lcm st7781
+
+linux-vlcd   With this option, FTK will run on virtual framebuffer. I wrote a
+emulator for FTK base on memfb and uinput, with a vnc server and vncviever,
+FTK can run on VNC.
+
+linux-dfb With this option, FTK will run on DirectFB, FTK does not use
+DirectFB Windows system, just use it to abstract display and input device, so
+you can utilize DirectFB hardware acceleration.
+
+See tools/cross-build/README for cross building.
+

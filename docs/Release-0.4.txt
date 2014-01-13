@@ -1,0 +1,12 @@
+1.Bug fix & optimization. 
+2.Full lua bindings.
+3.Use ftk.cnf to store ftk settings.
+
+Contributors:
+Who  Email What
+======================================================
+Li XianJing <xianjimli@gmail.com> 
+	1.Bug fix & optimization
+	2.Lua bindings
+	3.Add ftk config
+

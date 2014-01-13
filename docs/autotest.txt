@@ -1,0 +1,6 @@
+1.record the input device event.
+desktop --event-record=event.log
+
+2.replay the events.
+desktop --event-play=event.log
+

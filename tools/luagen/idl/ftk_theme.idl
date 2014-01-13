@@ -1,0 +1,15 @@
+#include "ftk_typedef.idl"
+
+interface FtkTheme
+{
+	FtkThemePtr  ftk_theme_create(in int init_default);
+	Ret        ftk_theme_parse_file(in FtkThemePtr thiz, in CStrPtr filename);
+	Ret        ftk_theme_parse_data(in FtkThemePtr thiz, in CStrPtr data, in size_t length);
+	FtkBitmapPtr ftk_theme_load_image(in FtkThemePtr thiz, in CStrPtr filename);
+	FtkBitmapPtr ftk_theme_get_bg(in FtkThemePtr thiz, in FtkWidgetType type, in FtkWidgetState state);
+	FtkColor   ftk_theme_get_bg_color(in FtkThemePtr thiz, in FtkWidgetType type, in FtkWidgetState state);
+	FtkColor   ftk_theme_get_fg_color(in FtkThemePtr thiz, in FtkWidgetType type, in FtkWidgetState state);
+	FtkColor   ftk_theme_get_border_color(in FtkThemePtr thiz, in FtkWidgetType type, in FtkWidgetState state);
+	void       ftk_theme_destroy(in FtkThemePtr thiz);
+};
+

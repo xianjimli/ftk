@@ -1,0 +1,9 @@
+#include "ftk_widget.idl"
+
+typedef voidPtr FtkStatusPanelPtr;
+interface FtkStatusPanel : FtkWidget
+{
+	FtkStatusPanelPtr ftk_status_panel_create(in int size);
+	Ret ftk_status_panel_add(in FtkWidgetPtr thiz, in FtkWidgetPtr item);
+	Ret ftk_status_panel_remove(in FtkWidgetPtr thiz, in FtkWidgetPtr item);
+};

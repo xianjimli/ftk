@@ -1,0 +1,5 @@
+<application name="alpha3D" exec="ftk_opengles_demos" init="ftk_app_demo_alpha3D_create" />
+<application name="fog" exec="ftk_opengles_demos" init="ftk_app_demo_fog_create" />
+<application name="material" exec="ftk_opengles_demos" init="ftk_app_demo_material_create" />
+<application name="helloGLES" exec="ftk_opengles_demos" init="ftk_app_demo_hellogles_create" />
+

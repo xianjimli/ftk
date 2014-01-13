@@ -1,0 +1,8 @@
+#include "ftk_window.idl"
+
+typedef voidPtr FtkAppWindowPtr;
+interface FtkAppWindow : FtkWindow
+{
+	FtkAppWindowPtr ftk_app_window_create();
+	Ret ftk_app_window_set_on_prepare_options_menu(inout FtkWidgetPtr thiz, in FtkPrepareOptionsMenuFunc on_prepare_options_menu);
+};

@@ -1,0 +1,32 @@
+#SKIA_ROOT=/work/skia/
+#SKIA_CFLAGS=-I$(SKIA_ROOT)include/core -I$(SKIA_ROOT)include/config -I$(SKIA_ROOT)include/images -I$(SKIA_ROOT)include
+#SKIA_LIBS_ROOT=$(SKIA_ROOT)out/Debug/obj.target/gyp/
+#SKIA_LDFLAGS=-lstdc++ -lm -lfreetype -lpthread $(SKIA_LIBS_ROOT)/libcore.a $(SKIA_LIBS_ROOT)/libopts.a $(SKIA_LIBS_ROOT)/libimages.a $(SKIA_LIBS_ROOT)/libzlib.a $(SKIA_LIBS_ROOT)/libgr.a $(SKIA_LIBS_ROOT)/libutils.a
+
+INCLUDES=-Wall -g -DHAS_PNG -DHAS_JPEG -DHAS_BMP \
+	-I$(abs_top_srcdir)/src -I$(abs_top_srcdir)/src/im/default \
+	-I$(abs_top_srcdir)/src/im/gpinyin \
+	-I$(abs_top_srcdir)/src/im/gpinyin/ftk \
+	-I$(abs_top_srcdir)/src/im/gpinyin/include \
+	-DFTK_SUPPORT_C99 \
+	-DFTK_SHARED_CANVAS \
+	-DFTK_HAS_DLOPEN 
+
+#INCLUDES+= \
+	-DPSP \
+	-I$(abs_top_srcdir)/src/os/psp
+
+INCLUDES+=-DLINUX \
+	-DFTK_ROOT_DIR="\"$(datadir)/ftk\"" \
+	-DDATA_DIR="\"$(datadir)/ftk/base\"" \
+	-DFTK_CNF="\"$(datadir)/ftk/ftk.cnf\"" \
+	-DFTK_DATA_ROOT="\"$(datadir)/ftk\"" \
+	-DTESTDATA_DIR="\"$(abs_top_srcdir)/testdata\"" \
+	-DLOCAL_DATA_DIR="\"$(abs_top_srcdir)\"" \
+	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+	-I$(abs_top_srcdir)/src/os/linux @CANVAS_CFLAGS@
+
+CANVAS_CFLAGS=@CANVAS_CFLAGS@
+CANVAS_LDFLAGS=@CANVAS_LDFLAGS@
+MYLDFLAGS=$(abs_top_builddir)/src/libftk.la -lpng -ljpeg -lz -lm -ldl @CANVAS_LDFLAGS@
+

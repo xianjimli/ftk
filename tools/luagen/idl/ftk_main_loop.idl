@@ -1,0 +1,11 @@
+#include "ftk_typedef.idl"
+
+interface FtkMainLoop
+{
+	FtkMainLoopPtr ftk_main_loop_create(in FtkSourcesManagerPtr sources_manager);
+	Ret  ftk_main_loop_run(in FtkMainLoopPtr thiz);
+	Ret  ftk_main_loop_quit(in FtkMainLoopPtr thiz);
+	Ret  ftk_main_loop_add_source(in FtkMainLoopPtr thiz, in FtkSourcePtr source);
+	Ret  ftk_main_loop_remove_source(in FtkMainLoopPtr thiz, in FtkSourcePtr source);
+	void ftk_main_loop_destroy(in FtkMainLoopPtr thiz);
+};

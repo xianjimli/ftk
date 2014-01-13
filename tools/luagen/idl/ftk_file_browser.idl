@@ -1,0 +1,12 @@
+#include "ftk_window.idl"
+
+typedef voidPtr FtkFileBrowserPtr;
+interface FtkFileBrowser :FtkWidget 
+{
+	FtkFileBrowserPtr ftk_file_browser_create(in int type);
+	Ret        ftk_file_browser_set_path(in FtkWidgetPtr thiz, in CStrPtr path);
+	Ret        ftk_file_browser_set_filter(in FtkWidgetPtr thiz, in CStrPtr mime_type);
+	Ret        ftk_file_browser_set_choosed_handler(in FtkWidgetPtr thiz, 
+		in FtkFileBrowserOnChoosedFunc on_choosed);
+	Ret        ftk_file_browser_load(in FtkWidgetPtr thiz);
+};

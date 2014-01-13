@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: ftk
+Description: a embeded gui library.
+Version: 1.0
+Requires: 
+Libs: -L${libdir} -lftk
+Cflags: -I${includedir}/ftk
+

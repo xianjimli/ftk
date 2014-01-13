@@ -1,0 +1,71 @@
+To create a new theme, you should:
+
+1.Design some icons and images(see the theme/default).
+2.Create theme description file named theme.xml.
+
+theme.xml format description:
+
+1.All contents must be placed in the tag <theme>.
+
+2.The tag theme has an attribute "name". It is used to locate the icons and images. For example, if your theme named "sky", FTK will try to locate icons and images in $prefix/share/ftk/base/theme/sky.
+
+3.Each kind of widget has its own theme info, if no theme info is assigned for it, the default one is supplied.
+
+4.All kind of widget have four categories(bg/bg_image/fg/bd) attributes, and each category attribute has four states(normal/focused/active/disable). 
+
+bg: means background color.
+fg: means foreground color.
+bd: means border color, only valid for part of widgets, such as progressbar.
+bg_image: means background images.
+
+normal:  when the widget is under normal state.
+focused: when the widget is focused.
+active:  when the widget is active, generally the mouse/pen is pressed on the widget(not all widget has active state).
+disable: when the widget is insensitive.
+
+the color format is: AARRGGBB, for example: ff9d9e9a means a=0xff r=0x9d g=0x9e b=0x9a
+
+5.Font attr is supported after release 0.5.
+
+here is a sample theme.xml:
+
+<theme name="default">
+
+<button bg_image[normal]="btn_default_normal.png" 
+	bg_image[focused]="btn_default_selected.png" 
+	bg_image[active]="btn_default_pressed.png" 
+	bg_image[disable]="btn_default_normal_disable.png"
+	font="size:20" /> 
+
+<progress_bar  
+	bg[normal]="ff9d9e9d" fg[normal]="ffffd300"
+	bg[focused]="ff9d9e9d" fg[focused]="ffffd300"
+	bg[active]="ff9d9e9d" fg[active]="ffffd300"
+	bg[disable]="ff9d9e9d" fg[disable]="ffffd300"/>
+
+<entry  
+	bg[normal]="ffffffff" fg[normal]="ff000000" bd[normal]="ffd0d0d0"
+	bg[focused]="ffffffff" fg[focused]="ff000000" bd[focused]="ffffbb00"
+	bg[active]="ffffffff" fg[active]="ff000000" bd[active]="ffe2ceee"
+	bg[disable]="ffffffff" fg[disable]="ffaca899" bd[disable]="ffe2ceee"/>
+
+<check_button 
+	fg[normal]="ff000000"
+	fg[focused]="ffffbb00"
+	fg[active]="ffffbb00"
+	fg[disable]="ffaca899"/>
+
+<radio_button 
+	fg[normal]="ff000000"
+	fg[focused]="ffffbb00"
+	fg[active]="ffffbb00"
+	fg[disable]="ffaca899"/>
+
+<icon_view bg_image[normal]="icon_view_bg.png" 
+	bg_image[focused]="icon_view_bg.png" 
+	bg_image[active]="icon_view_bg.png" 
+	bg_image[disable]="icon_view_bg.png"/> 
+
+<menu_panel bg[normal]="ffffffff" fg[normal]="ffccc9b8" bd[normal]="ffb0a080"/>
+<menu_item bg_image[focused]="menuitem_background_focus.png" bg_image[active]="menuitem_background_pressed.png" />
+</theme>

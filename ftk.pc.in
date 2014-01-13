@@ -1,0 +1,12 @@
+prefix=@prefix@
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: @PACKAGE_NAME@
+Description: a embeded gui library.
+Version: @VERSION@
+Requires: 
+Libs: -L${libdir} -lftk
+Cflags: -I${includedir}/ftk
+

@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+typedef voidPtr FtkWindowPtr;
+interface FtkXul
+{
+	FtkWidgetPtr ftk_xul_load(in CStrPtr xml, in int length);
+};
+

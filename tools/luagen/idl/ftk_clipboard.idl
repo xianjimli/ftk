@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+interface FtkClipboard
+{
+	int ftk_clipboard_has_data();
+	Ret ftk_clipboard_set_text(in CStrPtr text);
+	Ret ftk_clipboard_get_text(out CStrPtr text);
+};

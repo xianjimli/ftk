@@ -1,0 +1,11 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Vincent OpenGLES
+Description: A 3-D Rendering Library for Mobile Devices
+Version: 0.0.1
+Libs: -L${libdir} -lopengles -lftk @LIBS@
+Cflags: -I${includedir}
+

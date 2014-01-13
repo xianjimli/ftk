@@ -1,0 +1,461 @@
+libftk_demos_la-demo_scroll_bar.lo: demo_scroll_bar.c \
+ /opt/work/github/ftk-read-only/src/ftk.h \
+ /opt/work/github/ftk-read-only/src/ftk_log.h \
+ /opt/work/github/ftk-read-only/src/ftk_typedef.h \
+ /opt/work/github/ftk-read-only/src/ftk_platform.h /usr/include/stdio.h \
+ /usr/include/features.h /usr/include/stdc-predef.h \
+ /usr/include/sys/cdefs.h /usr/include/bits/wordsize.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
+ /usr/include/bits/types.h /usr/include/bits/typesizes.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h \
+ /usr/include/bits/stdio.h /usr/include/assert.h /usr/include/stdlib.h \
+ /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
+ /usr/include/endian.h /usr/include/bits/endian.h \
+ /usr/include/bits/byteswap.h /usr/include/bits/byteswap-16.h \
+ /usr/include/sys/types.h /usr/include/time.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/sigset.h \
+ /usr/include/bits/time.h /usr/include/sys/sysmacros.h \
+ /usr/include/bits/pthreadtypes.h /usr/include/alloca.h \
+ /usr/include/string.h /usr/include/xlocale.h /usr/include/bits/string.h \
+ /usr/include/bits/string2.h \
+ /opt/work/github/ftk-read-only/src/os/linux/ftk_linux.h \
+ /usr/include/fcntl.h /usr/include/bits/fcntl.h /usr/include/bits/stat.h \
+ /usr/include/dirent.h /usr/include/bits/dirent.h \
+ /usr/include/bits/posix1_lim.h /usr/include/bits/local_lim.h \
+ /usr/include/linux/limits.h /usr/include/sys/stat.h /usr/include/errno.h \
+ /usr/include/bits/errno.h /usr/include/linux/errno.h \
+ /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/unistd.h \
+ /usr/include/bits/posix_opt.h /usr/include/bits/environments.h \
+ /usr/include/bits/confname.h /usr/include/getopt.h /usr/include/ctype.h \
+ /usr/include/linux/fb.h /usr/include/linux/types.h \
+ /usr/include/asm/types.h /usr/include/asm-generic/types.h \
+ /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
+ /usr/include/asm-generic/bitsperlong.h /usr/include/linux/posix_types.h \
+ /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
+ /usr/include/asm/posix_types_64.h /usr/include/asm-generic/posix_types.h \
+ /usr/include/linux/i2c.h /usr/include/linux/kd.h \
+ /usr/include/linux/input.h /usr/include/sys/time.h \
+ /usr/include/sys/ioctl.h /usr/include/bits/ioctls.h \
+ /usr/include/asm/ioctls.h /usr/include/asm-generic/ioctls.h \
+ /usr/include/linux/ioctl.h /usr/include/asm/ioctl.h \
+ /usr/include/asm-generic/ioctl.h /usr/include/bits/ioctl-types.h \
+ /usr/include/sys/ttydefaults.h /usr/include/sys/socket.h \
+ /usr/include/sys/uio.h /usr/include/bits/uio.h \
+ /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
+ /usr/include/bits/sockaddr.h /usr/include/asm/socket.h \
+ /usr/include/asm-generic/socket.h /usr/include/asm/sockios.h \
+ /usr/include/asm-generic/sockios.h ../../config_ftk.h \
+ /usr/include/locale.h /usr/include/bits/locale.h /usr/include/libintl.h \
+ /opt/work/github/ftk-read-only/src/ftk_mmap.h \
+ /opt/work/github/ftk-read-only/src/ftk_bitmap.h \
+ /opt/work/github/ftk-read-only/src/ftk_allocator.h \
+ /opt/work/github/ftk-read-only/src/ftk_dialog.h \
+ /opt/work/github/ftk-read-only/src/ftk_window.h \
+ /opt/work/github/ftk-read-only/src/ftk_widget.h \
+ /opt/work/github/ftk-read-only/src/ftk_key.h \
+ /opt/work/github/ftk-read-only/src/ftk_event.h \
+ /opt/work/github/ftk-read-only/src/ftk_canvas.h \
+ /opt/work/github/ftk-read-only/src/ftk_gc.h \
+ /opt/work/github/ftk-read-only/src/ftk_font_desc.h \
+ /opt/work/github/ftk-read-only/src/ftk_display.h \
+ /opt/work/github/ftk-read-only/src/ftk_animation.h \
+ /opt/work/github/ftk-read-only/src/ftk_params.h \
+ /opt/work/github/ftk-read-only/src/ftk_interpolator.h \
+ /opt/work/github/ftk-read-only/src/ftk_wnd_manager.h \
+ /opt/work/github/ftk-read-only/src/ftk_main_loop.h \
+ /opt/work/github/ftk-read-only/src/ftk_sources_manager.h \
+ /opt/work/github/ftk-read-only/src/ftk_source.h \
+ /opt/work/github/ftk-read-only/src/ftk_animation_trigger.h \
+ /opt/work/github/ftk-read-only/src/ftk_app_window.h \
+ /opt/work/github/ftk-read-only/src/ftk_icon_cache.h \
+ /opt/work/github/ftk-read-only/src/ftk_status_item.h \
+ /opt/work/github/ftk-read-only/src/ftk_progress_bar.h \
+ /opt/work/github/ftk-read-only/src/ftk_source_timer.h \
+ /opt/work/github/ftk-read-only/src/ftk_popup_menu.h \
+ /opt/work/github/ftk-read-only/src/ftk_list_model_default.h \
+ /opt/work/github/ftk-read-only/src/ftk_list_model.h \
+ /opt/work/github/ftk-read-only/src/ftk_list_view.h \
+ /opt/work/github/ftk-read-only/src/ftk_list_render.h \
+ /opt/work/github/ftk-read-only/src/ftk_menu_item.h \
+ /opt/work/github/ftk-read-only/src/ftk_globals.h \
+ /opt/work/github/ftk-read-only/src/ftk_theme.h \
+ /opt/work/github/ftk-read-only/src/ftk_config.h \
+ /opt/work/github/ftk-read-only/src/ftk_text_layout.h \
+ /opt/work/github/ftk-read-only/src/ftk_bitmap_factory.h \
+ /opt/work/github/ftk-read-only/src/ftk_image_decoder.h \
+ /opt/work/github/ftk-read-only/src/ftk_input_method_manager.h \
+ /opt/work/github/ftk-read-only/src/ftk_input_method.h \
+ /opt/work/github/ftk-read-only/src/ftk_input_method_chooser.h \
+ /opt/work/github/ftk-read-only/src/ftk_input_method_preeditor.h \
+ /opt/work/github/ftk-read-only/src/ftk_label.h \
+ /opt/work/github/ftk-read-only/src/ftk_image.h \
+ /opt/work/github/ftk-read-only/src/ftk_entry.h \
+ /opt/work/github/ftk-read-only/src/ftk_button.h \
+ /opt/work/github/ftk-read-only/src/ftk_painter.h \
+ /opt/work/github/ftk-read-only/src/ftk_wait_box.h \
+ /opt/work/github/ftk-read-only/src/ftk_combo_box.h \
+ /opt/work/github/ftk-read-only/src/ftk_text_view.h \
+ /opt/work/github/ftk-read-only/src/ftk_menu_panel.h \
+ /opt/work/github/ftk-read-only/src/ftk_source_idle.h \
+ /opt/work/github/ftk-read-only/src/ftk_status_panel.h \
+ /opt/work/github/ftk-read-only/src/ftk_allocator_default.h \
+ /opt/work/github/ftk-read-only/src/ftk_list_render_default.h \
+ /opt/work/github/ftk-read-only/src/ftk_check_button.h \
+ /opt/work/github/ftk-read-only/src/ftk_file_system.h \
+ /opt/work/github/ftk-read-only/src/ftk_file_browser.h \
+ /opt/work/github/ftk-read-only/src/ftk_message_box.h \
+ /opt/work/github/ftk-read-only/src/ftk_group_box.h \
+ /opt/work/github/ftk-read-only/src/ftk_scroll_bar.h \
+ /opt/work/github/ftk-read-only/src/ftk_icon_view.h \
+ /opt/work/github/ftk-read-only/src/ftk_clipboard.h \
+ /opt/work/github/ftk-read-only/src/ftk_sprite.h \
+ /opt/work/github/ftk-read-only/src/ftk_tab.h ftk_app_demo.h \
+ /opt/work/github/ftk-read-only/apps/common/ftk_app.h \
+ /opt/work/github/ftk-read-only/src/ftk_config.h \
+ /opt/work/github/ftk-read-only/src/ftk_globals.h
+
+/opt/work/github/ftk-read-only/src/ftk.h:
+
+/opt/work/github/ftk-read-only/src/ftk_log.h:
+
+/opt/work/github/ftk-read-only/src/ftk_typedef.h:
+
+/opt/work/github/ftk-read-only/src/ftk_platform.h:
+
+/usr/include/stdio.h:
+
+/usr/include/features.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/assert.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/bits/byteswap-16.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/time.h:
+
+/usr/include/sys/select.h:
+
+/usr/include/bits/select.h:
+
+/usr/include/bits/sigset.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/sys/sysmacros.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/alloca.h:
+
+/usr/include/string.h:
+
+/usr/include/xlocale.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/opt/work/github/ftk-read-only/src/os/linux/ftk_linux.h:
+
+/usr/include/fcntl.h:
+
+/usr/include/bits/fcntl.h:
+
+/usr/include/bits/stat.h:
+
+/usr/include/dirent.h:
+
+/usr/include/bits/dirent.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/usr/include/getopt.h:
+
+/usr/include/ctype.h:
+
+/usr/include/linux/fb.h:
+
+/usr/include/linux/types.h:
+
+/usr/include/asm/types.h:
+
+/usr/include/asm-generic/types.h:
+
+/usr/include/asm-generic/int-ll64.h:
+
+/usr/include/asm/bitsperlong.h:
+
+/usr/include/asm-generic/bitsperlong.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/asm/posix_types.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/linux/i2c.h:
+
+/usr/include/linux/kd.h:
+
+/usr/include/linux/input.h:
+
+/usr/include/sys/time.h:
+
+/usr/include/sys/ioctl.h:
+
+/usr/include/bits/ioctls.h:
+
+/usr/include/asm/ioctls.h:
+
+/usr/include/asm-generic/ioctls.h:
+
+/usr/include/linux/ioctl.h:
+
+/usr/include/asm/ioctl.h:
+
+/usr/include/asm-generic/ioctl.h:
+
+/usr/include/bits/ioctl-types.h:
+
+/usr/include/sys/ttydefaults.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/sys/uio.h:
+
+/usr/include/bits/uio.h:
+
+/usr/include/bits/socket.h:
+
+/usr/include/bits/socket_type.h:
+
+/usr/include/bits/sockaddr.h:
+
+/usr/include/asm/socket.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/asm/sockios.h:
+
+/usr/include/asm-generic/sockios.h:
+
+../../config_ftk.h:
+
+/usr/include/locale.h:
+
+/usr/include/bits/locale.h:
+
+/usr/include/libintl.h:
+
+/opt/work/github/ftk-read-only/src/ftk_mmap.h:
+
+/opt/work/github/ftk-read-only/src/ftk_bitmap.h:
+
+/opt/work/github/ftk-read-only/src/ftk_allocator.h:
+
+/opt/work/github/ftk-read-only/src/ftk_dialog.h:
+
+/opt/work/github/ftk-read-only/src/ftk_window.h:
+
+/opt/work/github/ftk-read-only/src/ftk_widget.h:
+
+/opt/work/github/ftk-read-only/src/ftk_key.h:
+
+/opt/work/github/ftk-read-only/src/ftk_event.h:
+
+/opt/work/github/ftk-read-only/src/ftk_canvas.h:
+
+/opt/work/github/ftk-read-only/src/ftk_gc.h:
+
+/opt/work/github/ftk-read-only/src/ftk_font_desc.h:
+
+/opt/work/github/ftk-read-only/src/ftk_display.h:
+
+/opt/work/github/ftk-read-only/src/ftk_animation.h:
+
+/opt/work/github/ftk-read-only/src/ftk_params.h:
+
+/opt/work/github/ftk-read-only/src/ftk_interpolator.h:
+
+/opt/work/github/ftk-read-only/src/ftk_wnd_manager.h:
+
+/opt/work/github/ftk-read-only/src/ftk_main_loop.h:
+
+/opt/work/github/ftk-read-only/src/ftk_sources_manager.h:
+
+/opt/work/github/ftk-read-only/src/ftk_source.h:
+
+/opt/work/github/ftk-read-only/src/ftk_animation_trigger.h:
+
+/opt/work/github/ftk-read-only/src/ftk_app_window.h:
+
+/opt/work/github/ftk-read-only/src/ftk_icon_cache.h:
+
+/opt/work/github/ftk-read-only/src/ftk_status_item.h:
+
+/opt/work/github/ftk-read-only/src/ftk_progress_bar.h:
+
+/opt/work/github/ftk-read-only/src/ftk_source_timer.h:
+
+/opt/work/github/ftk-read-only/src/ftk_popup_menu.h:
+
+/opt/work/github/ftk-read-only/src/ftk_list_model_default.h:
+
+/opt/work/github/ftk-read-only/src/ftk_list_model.h:
+
+/opt/work/github/ftk-read-only/src/ftk_list_view.h:
+
+/opt/work/github/ftk-read-only/src/ftk_list_render.h:
+
+/opt/work/github/ftk-read-only/src/ftk_menu_item.h:
+
+/opt/work/github/ftk-read-only/src/ftk_globals.h:
+
+/opt/work/github/ftk-read-only/src/ftk_theme.h:
+
+/opt/work/github/ftk-read-only/src/ftk_config.h:
+
+/opt/work/github/ftk-read-only/src/ftk_text_layout.h:
+
+/opt/work/github/ftk-read-only/src/ftk_bitmap_factory.h:
+
+/opt/work/github/ftk-read-only/src/ftk_image_decoder.h:
+
+/opt/work/github/ftk-read-only/src/ftk_input_method_manager.h:
+
+/opt/work/github/ftk-read-only/src/ftk_input_method.h:
+
+/opt/work/github/ftk-read-only/src/ftk_input_method_chooser.h:
+
+/opt/work/github/ftk-read-only/src/ftk_input_method_preeditor.h:
+
+/opt/work/github/ftk-read-only/src/ftk_label.h:
+
+/opt/work/github/ftk-read-only/src/ftk_image.h:
+
+/opt/work/github/ftk-read-only/src/ftk_entry.h:
+
+/opt/work/github/ftk-read-only/src/ftk_button.h:
+
+/opt/work/github/ftk-read-only/src/ftk_painter.h:
+
+/opt/work/github/ftk-read-only/src/ftk_wait_box.h:
+
+/opt/work/github/ftk-read-only/src/ftk_combo_box.h:
+
+/opt/work/github/ftk-read-only/src/ftk_text_view.h:
+
+/opt/work/github/ftk-read-only/src/ftk_menu_panel.h:
+
+/opt/work/github/ftk-read-only/src/ftk_source_idle.h:
+
+/opt/work/github/ftk-read-only/src/ftk_status_panel.h:
+
+/opt/work/github/ftk-read-only/src/ftk_allocator_default.h:
+
+/opt/work/github/ftk-read-only/src/ftk_list_render_default.h:
+
+/opt/work/github/ftk-read-only/src/ftk_check_button.h:
+
+/opt/work/github/ftk-read-only/src/ftk_file_system.h:
+
+/opt/work/github/ftk-read-only/src/ftk_file_browser.h:
+
+/opt/work/github/ftk-read-only/src/ftk_message_box.h:
+
+/opt/work/github/ftk-read-only/src/ftk_group_box.h:
+
+/opt/work/github/ftk-read-only/src/ftk_scroll_bar.h:
+
+/opt/work/github/ftk-read-only/src/ftk_icon_view.h:
+
+/opt/work/github/ftk-read-only/src/ftk_clipboard.h:
+
+/opt/work/github/ftk-read-only/src/ftk_sprite.h:
+
+/opt/work/github/ftk-read-only/src/ftk_tab.h:
+
+ftk_app_demo.h:
+
+/opt/work/github/ftk-read-only/apps/common/ftk_app.h:
+
+/opt/work/github/ftk-read-only/src/ftk_config.h:
+
+/opt/work/github/ftk-read-only/src/ftk_globals.h:

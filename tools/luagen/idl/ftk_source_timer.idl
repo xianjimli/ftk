@@ -1,0 +1,7 @@
+#include "ftk_source.idl"
+
+interface FtkSourceTimer : FtkSource
+{
+	FtkSourcePtr ftk_source_timer_create(in int interval, in FtkTimerFunc action);
+	Ret ftk_source_timer_reset(in FtkSourcePtr thiz);
+};

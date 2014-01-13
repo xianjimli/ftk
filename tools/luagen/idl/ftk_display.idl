@@ -1,0 +1,10 @@
+#include "ftk_typedef.idl"
+
+interface FtkDisplay
+{
+	Ret ftk_display_update(in FtkDisplayPtr thiz, in FtkBitmapPtr bitmap, in FtkRectPtr rect, in int xoffset, in int yoffset);
+	Ret ftk_display_update_and_notify(in FtkDisplayPtr thiz, in 	FtkBitmapPtr bitmap, in FtkRectPtr rect, in int xoffset, in int yoffset);
+	int ftk_display_width(in FtkDisplayPtr thiz);
+	int ftk_display_height(in FtkDisplayPtr thiz);
+	Ret ftk_display_snap(in FtkDisplayPtr thiz, in FtkRectPtr rect, in FtkBitmapPtr bitmap);
+};

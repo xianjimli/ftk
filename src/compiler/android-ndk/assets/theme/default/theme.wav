@@ -1,0 +1,56 @@
+<theme name="default">
+
+<button bg_image[normal]="btn_default_normal.png" bg[normal]="ffd0d0d0"
+	bg_image[focused]="btn_default_selected.png" bg[focused]="ffffbb00"
+	bg_image[active]="btn_default_pressed.png" bg[active]="ffe2ceee"
+	bg_image[disable]="btn_default_normal_disable.png"/> 
+
+<progress_bar  
+	bg[normal]="ff9d9e9d" fg[normal]="ffffd300"
+	bg[focused]="ff9d9e9d" fg[focused]="ffffd300"
+	bg[active]="ff9d9e9d" fg[active]="ffffd300"
+	bg[disable]="ff9d9e9d" fg[disable]="ffffd300"/>
+
+<entry  
+	bg[normal]="ffffffff" fg[normal]="ff000000" bd[normal]="ff404040"
+	bg[focused]="ffffffff" fg[focused]="ff000000" bd[focused]="ffffbb00"
+	bg[active]="ffffffff" fg[active]="ff000000" bd[active]="ffe2ceee"
+	bg[disable]="ffffffff" fg[disable]="ffaca899" bd[disable]="ffe2ceee"/>
+
+<text_view  
+	bg[normal]="ffffffff" fg[normal]="ff000000" bd[normal]="ff404040"
+	bg[focused]="ffffffff" fg[focused]="ff000000" bd[focused]="ffffbb00"
+	bg[active]="ffffffff" fg[active]="ff000000" bd[active]="ffe2ceee"
+	bg[disable]="ffffffff" fg[disable]="ffaca899" bd[disable]="ffe2ceee"/>
+
+<check_button 
+	fg[normal]="ff000000"
+	fg[focused]="ffffbb00"
+	fg[active]="ffffbb00"
+	fg[disable]="ffaca899"/>
+
+<radio_button 
+	fg[normal]="ff000000"
+	fg[focused]="ffffbb00"
+	fg[active]="ffffbb00"
+	fg[disable]="ffaca899"/>
+
+<list_view bg_image[normal]="list_view_bg.png" 
+	bg_image[focused]="list_view_bg.png" 
+	bg_image[active]="list_view_bg.png" 
+	bg_image[disable]="list_view_bg.png"/> 
+
+<icon_view bg_image[normal]="icon_view_bg.png" 
+	bg_image[focused]="icon_view_bg.png" 
+	bg_image[active]="icon_view_bg.png" 
+	bg_image[disable]="icon_view_bg.png"/> 
+
+<tab_page
+	bg[normal]="ff808080"
+	bg[focused]="ff808080"
+	bg[active]="ff808080"
+	bg[disable]="ff808080"/>
+
+<menu_panel bg[normal]="ffffffff" fg[normal]="ffccc9b8" bd[normal]="ffb0a080"/>
+<menu_item bg_image[focused]="menuitem_background_focus.png" bg_image[active]="menuitem_background_pressed.png" />
+</theme>

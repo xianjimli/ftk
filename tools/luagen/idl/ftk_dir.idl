@@ -1,0 +1,9 @@
+#include "ftk_typedef.idl"
+
+typedef voidPtr FtkDirPtr;
+interface FtkDir
+{
+	FtkDirPtr ftk_dir_open(in CStrPtr dir_name);
+	Ret  ftk_dir_read(in FtkDirPtr dir, in FtkFileInfoPtr info);
+	void ftk_dir_close(in FtkDirPtr dir);
+};

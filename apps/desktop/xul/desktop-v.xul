@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window value="Desktop" attr="$FTK_ATTR_IGNORE_CLOSE" bg_image[normal]="icons/paper.jpg">
+	<image id="1" x="($ww-220)/2" y="$wh/6" w="50" h="112" value="icons/1.png" attr="$FTK_ATTR_TRANSPARENT" />
+	<image id="2" x="($ww-220)/2+50" y="$wh/6" w="50" h="112" value="icons/2.png" attr="$FTK_ATTR_TRANSPARENT" />
+	<image id="3" x="($ww-220)/2+100" y="$wh/6" w="20" h="112" value="icons/colon.png" attr="$FTK_ATTR_TRANSPARENT" />
+	<image id="4" x="($ww-220)/2+120" y="$wh/6" w="50" h="112" value="icons/0.png" attr="$FTK_ATTR_TRANSPARENT" />
+	<image id="5" x="($ww-220)/2+170" y="$wh/6" w="50" h="112" value="icons/0.png" attr="$FTK_ATTR_TRANSPARENT" />
+	<button id="100" x="0" y="$wh-56" w="$ww" h="56" attr="$FTK_ATTR_BG_CENTER"
+		bg_image[normal]="icons/tray_handle_normal.png"
+		bg_image[focused]="icons/tray_handle_selected.png"
+		bg_image[active]="icons/tray_handle_pressed.png" 
+		bg_image[disable]="icons/tray_handle_normal.png" 
+		/>
+</window>

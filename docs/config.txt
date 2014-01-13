@@ -1,0 +1,35 @@
+Config options:
+=======================================
+1.statusbar enable=?
+ control if enable statusbar.
+
+2.cursor enable=?
+ control if enale cursor.
+
+3.theme name=?
+ set the name of theme.
+
+4.data_dir value=?
+ set the data directory.
+
+5.test_data_dir value=?
+ set the test data directory.
+
+6.rotate value=0|90|180|270
+ set the screen rotation angle.
+
+Load Order
+=======================================
+0.Initialize with default values.
+1.Load FTK_CNF
+2.Load ftk.cnf in current working directory.
+
+Example:
+=======================================
+<statusbar     enable="1" />
+<cursor        enable="0" />
+<theme         name="default" />
+<data_dir      value="./data" /> 
+<test_data_dir value="./testdata" />
+<rotate        value="90" />
+

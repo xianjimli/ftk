@@ -1,0 +1,3 @@
+<applications>
+<application name="shell" exec="app-shell" init="ftk_app_shell_create" />
+</applications>

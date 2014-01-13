@@ -1,0 +1,10 @@
+If touch screen doest work, please check:
+
+1.The following envs are set properly.
+	export TSLIB_PLUGINDIR=/opt/lib/ts/
+	export TSLIB_CONFFILE=/opt/etc/ts.conf
+	export TSLIB_CALIBFILE=/opt/etc/pointercal 
+	export FTK_TSLIB_FILE=/dev/input/event0
+
+2.module_raw are set correctly in ts.conf
+

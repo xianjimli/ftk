@@ -1,0 +1,8 @@
+#include "ftk_typedef.idl"
+
+interface FtkImage
+{
+	FtkWidgetPtr ftk_image_create(in FtkWidgetPtr parent, in int x, in int y, in int width, in int height);
+	Ret ftk_image_set_image(in FtkWidgetPtr thiz, in FtkBitmapPtr image);
+};
+

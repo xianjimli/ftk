@@ -1,0 +1,6 @@
+#include "ftk_list_render.idl"
+
+interface FtkListRenderDefault : FtkListRender
+{
+	FtkListRenderPtr ftk_list_render_default_create();
+};

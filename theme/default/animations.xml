@@ -1,0 +1,107 @@
+<animations>
+<event name="menu_show">
+	<expand base="bottom" alpha="enable" src="new_window" interpolator="decelerate" from="0.1" to="1.0" duration="150"/>
+</event>
+
+<event name="menu_hide">
+	<expand base="bottom" alpha="enable" src="old_window" interpolator="accelerate" from="1.0" to="0.1" duration="150"/>
+</event>
+
+<event name="msgbox_show">
+	<scale src="new_window" alpha="enable" interpolator="bounce" from="0.5" to="1.0" duration="200"/>
+</event>
+
+<event name="msgbox_hide">
+	<scale src="old_window" alpha="enable" interpolator="accelerate" from="1.0" to="0.5" duration="200"/>
+</event>
+
+<event name="dialog_show">
+	<scale src="new_window" alpha="enable" interpolator="decelerate" from="0.5" to="1.0" duration="200"/>
+</event>
+
+<event name="dialog_hide">
+	<scale src="old_window" alpha="enable" interpolator="accelerate" from="1.0" to="0.5" duration="200"/>
+</event>
+
+<event name="app_window_show">
+	<translate src="old_window|new_window" interpolator="decelerate"
+		dir="h" from="0" to="0.5" duration="300"/>
+</event>
+
+<event name="app_window_hide">
+	<translate src="new_window|old_window" interpolator="decelerate"
+		dir="h" from="0.5" to="0" duration="300"/>
+</event>
+
+<event name="app_main_window_show">
+	<expand src="new_window" interpolator="decelerate"
+		base="center" alpha="enable" from="0.2" to="1.0" duration="300"/>
+</event>
+
+<event name="app_main_window_hide">
+	<expand src="old_window" interpolator="accelerate"
+		base="center" alpha="enable" from="1.0" to="0.5" duration="300"/>
+</event>
+
+<event name="misc_window_show">
+	<alpha src="new_window" interpolator="linear"
+		from="0" to="1.0" duration="300"/>
+</event>
+
+<event name="misc_window_hide">
+	<alpha src="old_window" interpolator="linear"
+		from="1.0" to="0" duration="300"/>
+</event>
+
+<event name="combobox_up_show">
+	<expand src="new_window" interpolator="decelerate"
+		base="bottom" from="0.5" to="1.0" duration="200"/>
+</event>
+
+<event name="combobox_up_hide">
+	<alpha src="old_window" interpolator="accelerate"
+		from="1.0" to="0" duration="200"/>
+</event>
+
+<event name="combobox_down_show">
+	<expand src="new_window" interpolator="decelerate"
+		base="top" from="0.5" to="1.0" duration="200"/>
+</event>
+
+<event name="combobox_down_hide">
+	<alpha src="old_window" interpolator="accelerate"
+		from="1.0" to="0" duration="200"/>
+</event>
+
+<event name="applist_v_show">
+	<expand src="new_window" interpolator="decelerate"
+		base="bottom" push="true" from="0.1" to="1.0" duration="200"/>
+</event>
+
+<event name="applist_v_hide">
+	<expand src="old_window" interpolator="accelerate"
+		base="bottom" from="1.0" to="0.1" duration="200"/>
+</event>
+
+<event name="applist_h_show">
+	<expand src="new_window" interpolator="decelerate"
+		base="left" push="true" from="0.1" to="1.0" duration="200"/>
+</event>
+
+<event name="applist_h_hide">
+	<expand src="old_window" interpolator="accelerate"
+		base="left" from="1.0" to="0.1" duration="200"/>
+</event>
+
+<event name="im_preeditor_show">
+	<alpha src="new_window" interpolator="linear"
+		from="0" to="1.0" duration="300"/>
+</event>
+
+<event name="im_preeditor_hide">
+	<alpha src="old_window" interpolator="linear"
+		from="1.0" to="0" duration="300"/>
+</event>
+
+</animations>
+

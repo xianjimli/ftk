@@ -1,0 +1,16 @@
+typedef long int;
+typedef long Ret;
+typedef long String;
+typedef long LockInfo;
+typedef long FtkGc;
+
+interface FBusConf
+{
+	Ret Lock(in FtkGc gc);
+	Ret Unlock(out FtkGc gc);
+	Ret Del(in String xpath);
+	Ret Set(in String xpath, in String value);
+	Ret Get(in String xpath, out String value);
+	Ret GetChildCount(in String xpath, out int count);
+	Ret GetChild(in String xpath, in int index, out String child);
+};

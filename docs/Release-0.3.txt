@@ -1,0 +1,9 @@
+1.introduced ftk_allocator interface.
+2.support bitmap format image.
+3.suport input method framework.
+4.support pinyin input method.
+5.support wubi input method.
+6.support handwrite input method.
+7.support long press event.
+8.add filemanager application.
+

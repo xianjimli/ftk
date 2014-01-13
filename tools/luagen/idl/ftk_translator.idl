@@ -1,0 +1,9 @@
+#include "ftk_typedef.idl"
+
+interface FtkTranslator
+{
+	FtkTranslatorPtr ftk_translator_create(in CStrPtr package, in CStrPtr locale);
+	CStrPtr ftk_translator_get_text(in FtkTranslatorPtr thiz, in CStrPtr text);
+	void ftk_translator_destroy(in FtkTranslatorPtr thiz);
+};
+

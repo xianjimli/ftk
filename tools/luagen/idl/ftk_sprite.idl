@@ -1,0 +1,14 @@
+#include "ftk_typedef.idl"
+
+interface FtkSprite
+{
+	FtkSpritePtr ftk_sprite_create();
+	int  ftk_sprite_get_x(in FtkSpritePtr thiz);
+	int  ftk_sprite_get_y(in FtkSpritePtr thiz);
+	int  ftk_sprite_is_visible(in FtkSpritePtr thiz);
+	Ret  ftk_sprite_show(in FtkSpritePtr thiz, in int show);
+	Ret  ftk_sprite_move(in FtkSpritePtr thiz, in int x, in int y);
+	Ret  ftk_sprite_set_icon(in FtkSpritePtr thiz, in FtkBitmapPtr icon);
+	Ret  ftk_sprite_set_move_listener(in FtkSpritePtr thiz, in FtkListenerFunc listener);
+	void ftk_sprite_destroy(in FtkSpritePtr thiz);
+};

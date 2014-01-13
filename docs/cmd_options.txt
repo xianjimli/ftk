@@ -1,0 +1,13 @@
+FTK provides some options for all FTK based applications:
+
+o --enable-cursor 
+  run appliction with cursor supported.
+
+o --no-status-panel
+  run application without status panel.
+
+o --theme=
+  run application with specified theme.
+
+o --rotate=0|90|180|270 
+  set screen rotation angle.

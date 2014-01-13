@@ -1,13 +1,13 @@
-FTK == Funny ToolKit (Write just for fun)
+FTK == Funny ToolKit 
 =====================================================
 (You can use it in commercial software, but please let me know.)
 
-How to build ftk from svn source code?
-=====================================================
-o download:
+## How to build ftk from svn source code?
+---------------------
+* download:
 >  git clone https://github.com/xianjimli/ftk.git
 
-o configure:
+* configure:
 >  cd ftk
 
 >  ./autogen.sh
@@ -16,13 +16,13 @@ o configure:
 
 >  (run ./configure --help for more options)
 
-o build:
+* build:
 > make
 
-o install(need root)
+* install(need root)
 >  make install
 
-o run:
+* run:
 >  cd src/demos
 
 >  ./demo_button

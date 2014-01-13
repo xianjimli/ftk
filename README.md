@@ -5,26 +5,30 @@ FTK == Funny ToolKit (Write just for fun)
 How to build ftk from svn source code?
 =====================================================
 o download:
-  svn checkout http://ftk.googlecode.com/svn/trunk/ ftk-read-only
+>  git clone https://github.com/xianjimli/ftk.git
 
 o configure:
-  cd ftk-read-only
-  ./autogen.sh
-  ./configure --with-backend=linux-x11:320x480
-  (run ./configure --help for more options)
+>  cd ftk
+
+>  ./autogen.sh
+
+>  ./configure --with-backend=linux-x11:320x480
+
+>  (run ./configure --help for more options)
 
 o build:
-  make
+> make
 
 o install(need root)
-  make install
+>  make install
 
 o run:
-  cd src/demos
-  ./demo_button
+>  cd src/demos
+
+>  ./demo_button
  
  or(make install first):
-   desktop
+>   desktop
 
 How to build and run ftk on target board.
 =====================================================
@@ -33,8 +37,13 @@ see tools/cross-build/README
 Where can I get more information:
 =====================================================
 DOC:  docs/* 
+
 BLOG: http://www.limodev.cn/blog/archives/tag/ftk
+
 WIKI: http://code.google.com/p/ftk/wiki/
+
 Google Group: https://groups.google.com/group/funnytoolkit
-Still have problems please send email to xianjimli@gmail.com
+
+Still have problems please send email to xianjimli@hotmail.com
+
 

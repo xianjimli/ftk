@@ -1,4 +1,4 @@
-include $(abs_top_builddir)/src/rules.mk
+include $(abs_top_srcdir)/src/rules.mk
 
 noinst_PROGRAMS=label_test widget_test \
 	canvas_test ftk_test bitmap_test primary_source_test\

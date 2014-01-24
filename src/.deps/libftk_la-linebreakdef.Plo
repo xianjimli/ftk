@@ -1,9 +1,0 @@
-libftk_la-linebreakdef.lo: linebreak/linebreakdef.c linebreak/linebreak.h \
- /usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h \
- linebreak/linebreakdef.h
-
-linebreak/linebreak.h:
-
-/usr/lib/gcc/x86_64-redhat-linux/4.7.2/include/stddef.h:
-
-linebreak/linebreakdef.h:

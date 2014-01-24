@@ -1,3 +1,0 @@
-libvncserver_la-d3des.lo: d3des.c d3des.h
-
-d3des.h:

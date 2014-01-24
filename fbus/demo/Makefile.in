@@ -766,7 +766,7 @@ uninstall-am: uninstall-binPROGRAMS uninstall-libLTLIBRARIES \
 	uninstall-binPROGRAMS uninstall-libLTLIBRARIES \
 	uninstall-serviceDATA
 
-include $(abs_top_builddir)/src/rules.mk
+include $(abs_top_srcdir)/src/rules.mk
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

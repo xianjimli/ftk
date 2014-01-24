@@ -1,3 +1,17 @@
+
+#nios2
+#######################################################
+export ARCH=nios
+export HOST_PARAM="--host=nios2-linux --disable-shared --without-png"
+export TARGET_CC=nios2-linux-gcc
+export PATH=/opt/nios2/bin/:$PATH
+
+#PC emulate cross build.
+#######################################################
+#export ARCH=x86
+#export HOST_PARAM=
+#export TARGET_CC=gcc
+
 #broncho 1900
 #######################################################
 #export ARCH=arm
@@ -7,11 +21,11 @@
 
 #sh
 #######################################################
-export ARCH=sh4
-export HOST_PARAM=--host=sh4-linux
-export TARGET_CC=sh4-linux-gcc
-export PATH=/opt/STM/STLinux-2.3/devkit/sh4/bin/:$PATH
-export TARGET_CFLAGS="-DFTK_FONT_SIZE=32"
+#export ARCH=sh4
+#export HOST_PARAM=--host=sh4-linux
+#export TARGET_CC=sh4-linux-gcc
+#export PATH=/opt/STM/STLinux-2.3/devkit/sh4/bin/:$PATH
+#export TARGET_CFLAGS="-DFTK_FONT_SIZE=32"
 
 #openmoko
 #######################################################

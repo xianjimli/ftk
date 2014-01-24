@@ -1,5 +1,5 @@
 SUBDIRS=icons xul
-include $(abs_top_builddir)/src/rules.mk
+include $(abs_top_srcdir)/src/rules.mk
 LOCAL_CFLAGS=-I$(abs_top_srcdir)/apps/common  -DAPP_DATA_DIR="\"$(datadir)/ftk/desktop\"" \
 	-DAPP_LOCAL_DATA_DIR="\"$(srcdir)\"" -I$(abs_top_srcdir)/script_binding/lua \
 	-I$(abs_top_srcdir)/script_binding/lua/lua \

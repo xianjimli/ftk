@@ -1,7 +1,0 @@
-<statusbar     enable="1" />
-<cursor        enable="0" />
-<theme         name="default" />
-
-<data_dir      value="/usr/local/share/ftk/base" /> 
-<test_data_dir value="/usr/local/share/ftk/testdata" />
-

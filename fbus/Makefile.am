@@ -1,5 +1,5 @@
 SUBDIRS=. demo
-include $(abs_top_builddir)/src/rules.mk
+include $(abs_top_srcdir)/src/rules.mk
 
 lib_LTLIBRARIES=libfbus.la
 libfbus_la_SOURCES=\

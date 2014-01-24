@@ -1,4 +1,4 @@
-include $(abs_top_builddir)/src/rules.mk
+include $(abs_top_srcdir)/src/rules.mk
 
 lib_LTLIBRARIES=libfconf.la
 

@@ -262,6 +262,10 @@ if test "$enable_profile" = "yes"; then
   CFLAGS="$CFLAGS -DFTK_PROFILE -DFTK_MEMORY_PROFILE"
 fi
 
+if test "$enable_shared" = "yes"; then
+  CFLAGS="$CFLAGS -DFTK_PROFILE -DFTK_MEMORY_PROFILE"
+fi
+
 # Checks for typedefs, structures, and compiler characteristics.
 AC_C_INLINE
 AC_TYPE_SIZE_T
@@ -288,7 +292,6 @@ AC_CONFIG_FILES([ftk.pc
                 theme/default/Makefile
                 data/Makefile
                 testdata/Makefile
-                src/rules.mk
                 src/Makefile
                 src/im/Makefile
                 src/im/default/Makefile

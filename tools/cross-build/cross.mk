@@ -6,71 +6,65 @@ all_dfb_clean:  zlib_clean png_clean jpeg_clean tslib_clean freetype_clean direc
 
 check:
 	if [ ! -e packages ]; then mkdir packages;fi
+	cp -fv ftk/third/* packages
 
-packages/zlib-1.2.5.tar.gz:
-	cd packages && wget http://www.limodev.cn/ftk/zlib-1.2.5.tar.gz
-zlib-1.2.5: packages/zlib-1.2.5.tar.gz
-	tar xf packages/zlib-1.2.5.tar.gz
-zlib: zlib-1.2.5
+zlib-1.2.8:
+	tar xf packages/zlib-1.2.8.tar.gz
+zlib: zlib-1.2.8
 	export CC=$(TARGET_CC) PREFIX=$(PREFIX) && \
-	cd zlib-1.2.5 && \
+	cd zlib-1.2.8 && \
 	./configure --prefix=$(PREFIX) --shared &&\
 	make clean; make && make install DESTDIR=${STAGING} && \
 	make install DESTDIR=/ 
 zlib_clean:
-	cd zlib-1.2.5 && make clean
+	cd zlib-1.2.8 && make clean
 
-packages/libpng-1.4.7.tar.gz:
-	cd packages && wget http://www.limodev.cn/ftk/libpng-1.4.7.tar.gz
-libpng-1.4.7: packages/libpng-1.4.7.tar.gz
-	tar xf packages/libpng-1.4.7.tar.gz
-png: libpng-1.4.7
-	mkdir libpng-1.4.7/$(ARCH); cd libpng-1.4.7/$(ARCH) && \
+libpng-1.6.8:
+	tar xf packages/libpng-1.6.8.tar.xz
+png: libpng-1.6.8
+	mkdir libpng-1.6.8/$(ARCH); cd libpng-1.6.8/$(ARCH) && \
 	../configure $(HOST_PARAM) --prefix=$(PREFIX)  &&\
 	make clean; make && make install DESTDIR=${STAGING} && \
 	make install DESTDIR=/ 
 png_clean:
-	rm -rf libpng-1.4.7/$(ARCH)
+	rm -rf libpng-1.6.8/$(ARCH)
 
-packages/jpegsrc.v7.tar.gz:
-	cd packages && wget http://www.limodev.cn/ftk//jpegsrc.v7.tar.gz
-jpegsrc.v7: packages/jpegsrc.v7.tar.gz
-	tar xf packages/jpegsrc.v7.tar.gz
-jpeg: jpegsrc.v7
-	mkdir jpeg-7/$(ARCH); cd jpeg-7/$(ARCH) && \
+jpegsrc.v9:
+	tar xf packages/jpegsrc.v9.tar.gz
+jpeg: jpegsrc.v9
+	mkdir jpeg-9/$(ARCH); cd jpeg-9/$(ARCH) && \
 	../configure $(HOST_PARAM) --prefix=$(PREFIX)  &&\
 	make clean; make && make install DESTDIR=${STAGING} && \
 	make install DESTDIR=/ 
 jpeg_clean:
-	rm -rf jpeg-7/$(ARCH)
+	rm -rf jpeg-9/$(ARCH)
 
-packages/tslib-1.0.tar.bz2:
-	cd packages && wget http://www.limodev.cn/ftk/tslib-1.0.tar.bz2
-tslib-1.0: packages/tslib-1.0.tar.bz2
-	tar xf packages/tslib-1.0.tar.bz2
-tslib: tslib-1.0
-	cd tslib-1.0 && ./autogen.sh; cd -;\
-	mkdir tslib-1.0/$(ARCH); cd tslib-1.0/$(ARCH) && \
+tslib-1.x: 
+	tar xf packages/tslib-1.x.tar.gz
+
+tslib: tslib-1.x
+	cd tslib-1.x && ./autogen.sh; cd -;\
+	mkdir tslib-1.x/$(ARCH); cd tslib-1.x/$(ARCH) && \
 	CC=$(TARGET_CC) ../configure $(HOST_PARAM) --prefix=$(PREFIX) -sysconfdir=$(PREFIX)/etc  ac_cv_func_malloc_0_nonnull=yes &&\
 	make clean; make && make install DESTDIR=${STAGING} && \
 	make install DESTDIR=/ 
 
 tslib_clean:
-	rm -rf tslib-1.0/$(ARCH)
+	rm -rf tslib-1.x/$(ARCH)
 tslib_source_clean:
-	rm -rf tslib-1.0
+	rm -rf tslib-1.x
 
-packages/freetype-2.3.9.tar.gz:
-	cd packages && wget http://ftp.twaren.net/Unix/NonGNU/freetype/freetype-2.3.9.tar.gz
-freetype-2.3.9: packages/freetype-2.3.9.tar.gz
-	tar xf packages/freetype-2.3.9.tar.gz
-freetype: freetype-2.3.9
-	mkdir freetype-2.3.9/$(ARCH); cd freetype-2.3.9/$(ARCH) && \
+packages/freetype-2.5.2.tar.bz2:
+	cd packages && wget http://ftp.twaren.net/Unix/NonGNU/freetype/freetype-2.5.2.tar.bz2
+freetype-2.5.2: packages/freetype-2.5.2.tar.bz2
+	tar xf packages/freetype-2.5.2.tar.bz2
+freetype: freetype-2.5.2
+	mkdir freetype-2.5.2/$(ARCH); cd freetype-2.5.2/$(ARCH) && \
 	../configure $(HOST_PARAM) --prefix=$(PREFIX)  &&\
 	make clean; make && make install DESTDIR=${STAGING} && \
 	make install DESTDIR=/ 
 freetype_clean:
-	rm -rf freetype-2.3.9/$(ARCH)
+	rm -rf freetype-2.5.2/$(ARCH)
 
 packages/DirectFB-1.2.9.tar.gz:
 	cd packages && wget http://www.directfb.org/downloads/Core/DirectFB-1.2/DirectFB-1.2.9.tar.gz

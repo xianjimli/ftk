@@ -135,7 +135,7 @@ static Ret ftk_display_x11_init_image(FtkDisplay* thiz, int width, int height)
 
 	if(priv->ximage != NULL)
 	{
-		XDestroyImage(priv->ximage);
+	//	XDestroyImage(priv->ximage);
 		priv->ximage = NULL;
 	}
 
@@ -240,9 +240,11 @@ Ret ftk_display_x11_on_resize(FtkDisplay* thiz, int width, int height)
 	PrivInfo* priv = thiz != NULL ? (PrivInfo*)thiz->priv : NULL;
 	return_val_if_fail(priv != NULL, RET_FAIL);
 
-	priv->width  = width;
-	priv->height = height;
-	ftk_display_x11_init_image(thiz, width, height);
+	if(priv->width != width || priv->height != height) {
+		priv->width  = width;
+		priv->height = height;
+		ftk_display_x11_init_image(thiz, width, height);
+	}
 
 	return RET_OK;
 }

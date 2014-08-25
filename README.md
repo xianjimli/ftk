@@ -42,7 +42,8 @@ BLOG: http://www.limodev.cn/blog/archives/tag/ftk
 
 WIKI: http://code.google.com/p/ftk/wiki/
 
-Google Group: https://groups.google.com/group/funnytoolkit
+Forum: http://funnytoolkit.freeforums.org/index.php
+
 
 Still have problems please send email to xianjimli@hotmail.com
 

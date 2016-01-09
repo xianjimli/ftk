@@ -40,7 +40,9 @@ FTK_HIDE int FTK_MAIN(int argc, char* argv[])
 		FTK_QUIT_WHEN_WIDGET_CLOSE(win);
 
 		quit = ftk_widget_lookup(win, IDC_QUIT);
-		ftk_button_set_clicked_listener(quit, button_quit_clicked, win);
+		if(quit) {
+			ftk_button_set_clicked_listener(quit, button_quit_clicked, win);
+		}
 		ftk_widget_show_all(win, 1);
 
 		FTK_RUN();

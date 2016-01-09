@@ -93,6 +93,11 @@ const char* ftk_widget_get_text(FtkWidget* thiz);
 Ret ftk_widget_invalidate(FtkWidget* thiz);
 FtkWrapMode ftk_widget_get_wrap_mode(FtkWidget* thiz);
 
+void ftk_widget_set_left(FtkWidget* thiz, int left);
+void ftk_widget_set_top(FtkWidget* thiz, int top);
+void ftk_widget_set_width(FtkWidget* thiz, int w);
+void ftk_widget_set_height(FtkWidget* thiz, int h);
+
 void ftk_widget_show(FtkWidget* thiz, int visible);
 void ftk_widget_show_all(FtkWidget* thiz, int visible);
 void ftk_widget_set_visible(FtkWidget* thiz, int visible);

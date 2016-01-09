@@ -47,13 +47,47 @@ typedef struct _XulPrivInfo
 	FtkXulCallbacks* callbacks;
 }PrivInfo;
 
+#define X_FIX_LEFT   0
+#define X_FIX_RIGHT   1
+#define X_SCALE   2
+#define X_CENTER_IN_PARENT   3
+#define X_LEFT_IN_PARENT     4
+#define X_RIGHT_IN_PARENT    5
+
+#define Y_FIX_TOP   0
+#define Y_FIX_BOTTOM   1
+#define Y_SCALE   2
+#define Y_MIDDLE_IN_PARENT   3
+#define Y_TOP_IN_PARENT      4
+#define Y_BOTTOM_IN_PARENT   5
+
+#define HEIGHT_FIX   0
+#define HEIGHT_SCALE   1
+#define HEIGHT_FILL_PARENT   2
+
+#define WIDTH_FIX   0
+#define WIDTH_SCALE   1
+#define WIDTH_FILL_PARENT   2
+
 typedef struct _FtkWidgetCreateInfo
 {
 	int id;
 	int x;
+	int x_attr;
+	double x_param;
+
 	int y;
+	int y_attr;
+	double y_param;
+
 	int w;
+	int w_attr;
+	double w_param;
+
 	int h;
+	int h_attr;
+	float h_param;
+
 	int attr;
 	int visible;
 	char anim_hint[32];
@@ -771,26 +805,65 @@ static void ftk_xul_builder_init_widget_info(FtkXmlBuilder* thiz, const char** a
 			}
 			case 'x':
 			{
-				value = ftk_xul_builder_preprocess_value(thiz, value);
-				info->x = (int)ftk_expr_eval(value);
+				if(name[1] == 'a') 
+				{
+					info->x_attr = ftk_atoi(value);
+				}
+				else if(name[1] == 'p') 
+				{
+					info->x_param = ftk_atof(value);
+				}
+				else {
+					value = ftk_xul_builder_preprocess_value(thiz, value);
+					info->x = (int)ftk_expr_eval(value);
+				}
 				break;
 			}
 			case 'y':
 			{
-				value = ftk_xul_builder_preprocess_value(thiz, value);
-				info->y = (int)ftk_expr_eval(value);
+				if(name[1] == 'a') 
+				{
+					info->y_attr = ftk_atoi(value);
+				}
+				else if(name[1] == 'p') 
+				{
+					info->y_param = ftk_atof(value);
+				}
+				else 
+				{
+					value = ftk_xul_builder_preprocess_value(thiz, value);
+					info->y = (int)ftk_expr_eval(value);
+				}
 				break;
 			}
 			case 'w':
 			{
 				/*width*/
-				value = ftk_xul_builder_preprocess_value(thiz, value);
-				info->w = (int)ftk_expr_eval(value);
+				if(name[1] == 'a') 
+				{
+					info->w_attr = ftk_atoi(value);
+				}
+				else if(name[1] == 'p') 
+				{
+					info->w_param = ftk_atof(value);
+				}
+				else {
+					value = ftk_xul_builder_preprocess_value(thiz, value);
+					info->w = (int)ftk_expr_eval(value);
+				}
 				break;
 			}
 			case 'h':
 			{
-	            if(name[1] == '\0' || name[1] == 'e')
+				if(name[1] == 'a') 
+				{
+					info->h_attr = ftk_atoi(value);
+				}
+				else if(name[1] == 'p') 
+				{
+					info->h_param = ftk_atof(value);
+				}
+				else if(name[1] == '\0' || name[1] == 'e')
 	            {
                     /*height*/
                     value = ftk_xul_builder_preprocess_value(thiz, value);
@@ -973,6 +1046,116 @@ static void ftk_xul_builder_reset_widget_info(FtkXmlBuilder* thiz, FtkWidgetCrea
 	return;
 }
 
+static void ftk_xul_relayout_widget(FtkWidgetCreateInfo* info, FtkWidget* widget) 
+{
+	FtkWidget* parent = widget->parent;
+	int pw = ftk_widget_width(parent);
+	int ph = ftk_widget_height(parent);
+	int x = ftk_widget_left(widget);
+	int y = ftk_widget_top(widget);
+	int w = ftk_widget_width(widget);
+	int h = ftk_widget_height(widget);
+
+	switch(info->x_attr) 
+	{
+		case X_FIX_RIGHT: 
+		{
+			x = pw - info->x_param - w;
+			break;
+		}
+		case X_SCALE: 
+		{
+			x = x * info->x_param;
+			break;
+		}
+		case X_CENTER_IN_PARENT: 
+		{
+			x = (pw - w) >> 1;
+			break;
+		}
+		case X_LEFT_IN_PARENT: 
+		{
+			x = 0;
+			break;
+		}
+		case X_RIGHT_IN_PARENT:
+		{
+			x = pw - w;
+			break;
+		}
+		default:break;
+	}
+	
+	switch(info->y_attr) 
+	{
+		case Y_FIX_BOTTOM: 
+		{
+			y = ph - info->y_param - h;
+			break;
+		}
+		case Y_SCALE: 
+		{
+			y = y * info->y_param;
+			break;
+		}
+		case Y_MIDDLE_IN_PARENT: 
+		{
+			y = (ph - h) >> 1;
+			break;
+		}
+		case Y_TOP_IN_PARENT: 
+		{
+			y = 0;
+			break;
+		}
+		case Y_BOTTOM_IN_PARENT:
+		{
+			y = ph - h;
+			break;
+		}
+		default:break;
+	}
+	
+	switch(info->w_attr) 
+	{
+		case WIDTH_SCALE:
+		{
+			w = pw * info->w_param;
+			break;
+		}
+		case WIDTH_FILL_PARENT: 
+		{
+			w = pw;
+			x = 0;
+			break;
+		}
+		default:break;
+	}
+
+	switch(info->h_attr) 
+	{
+		case HEIGHT_SCALE:
+		{
+			h = ph * info->w_param;
+			break;
+		}
+		case HEIGHT_FILL_PARENT: 
+		{
+			h = ph;
+			y = 0;
+			break;
+		}
+		default:break;
+	}
+
+	ftk_widget_set_left(widget, x);
+	ftk_widget_set_top(widget, y);
+	ftk_widget_set_width(widget, w);
+	ftk_widget_set_height(widget, h);
+
+	return;
+}
+
 static void ftk_xul_builder_on_start(FtkXmlBuilder* thiz, const char* tag, const char** attrs)
 {
 	DECL_PRIV(thiz, priv);
@@ -993,6 +1176,7 @@ static void ftk_xul_builder_on_start(FtkXmlBuilder* thiz, const char* tag, const
 
         if((widget = creator->create(&info)) != NULL)
         {
+        	ftk_xul_relayout_widget(&info, widget);
             ftk_widget_set_id(widget, info.id);
             ftk_widget_set_attr(widget, info.attr);
             if(info.gc[FTK_WIDGET_NORMAL].mask & FTK_GC_BG)

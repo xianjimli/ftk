@@ -455,6 +455,39 @@ void ftk_widget_set_user_data(FtkWidget* thiz, FtkDestroy destroy, void* data)
 	return;
 }
 
+void ftk_widget_set_left(FtkWidget* thiz, int left) 
+{
+	return_if_fail(thiz != NULL && thiz->priv != NULL);
+	thiz->priv->left = left;
+
+	return;
+}
+
+void ftk_widget_set_top(FtkWidget* thiz, int top) 
+{
+	return_if_fail(thiz != NULL && thiz->priv != NULL);
+	thiz->priv->top = top;
+
+	return;
+}
+
+void ftk_widget_set_width(FtkWidget* thiz, int w) 
+{
+	return_if_fail(thiz != NULL && thiz->priv != NULL);
+	thiz->priv->width = w;
+
+	return;
+}
+
+void ftk_widget_set_height(FtkWidget* thiz, int h) 
+{
+	return_if_fail(thiz != NULL && thiz->priv != NULL);
+	thiz->priv->height = h;
+
+	return;
+
+}
+
 void ftk_widget_move(FtkWidget* thiz, int x, int y)
 {
 	FtkEvent event;

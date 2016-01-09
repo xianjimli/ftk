@@ -1,0 +1,6 @@
+"<?xml version="1.0" encoding="utf-8"?>"
+<window  value="win-main" visible="1">
+	<label id="ui-label-general" x="0" xattr="2" xparam="0" y="0" yattr="4" yparam="1" w="480" wattr="2" wparam="1" h="46" hattr="0" hparam="1" value="Label" />
+	<button id="ui-button-general" x="153" xattr="3" xparam="1" y="270" yattr="2" yparam="0.375" w="174" wattr="0" wparam="1" h="56" hattr="0" hparam="1" value="button" />
+	<entry id="ui-edit-general" x="148" xattr="2" xparam="0.30833333333333335" y="187" yattr="2" yparam="0.25972222222222224" w="199" wattr="1" wparam="0.41458333333333336" h="46" hattr="0" hparam="1" value="Editor" />
+</window>

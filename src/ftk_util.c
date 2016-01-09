@@ -722,7 +722,7 @@ int   ftk_atoi(const char* str)
 double ftk_atof(const char* str)
 {
 	int n = 0;
-	int f = 0;
+	unsigned int f = 0;
 	int neg = 0;
 	double result = 0;
 	const char* p = NULL;

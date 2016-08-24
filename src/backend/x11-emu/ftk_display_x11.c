@@ -27,11 +27,13 @@
  * ================================================================
  * 2010-03-05 Tao Yu <yut616@gmail.com> enable support of 16 bits.
  * 2009-10-06 Li XianJing <xianjimli@hotmail.com> created
+ * 2016-08-24 Harvis Wang <jiankangshiye@aliyun.com> fix XDestroyImage() 'free() invalid pointer' in X11 backend
  *
  */
 
 #include <X11/Xlib.h>
 #include <X11/Xutil.h>
+#include <X11/Xlibint.h>
 #include <X11/keysym.h>
 #include "ftk_log.h"
 #include "ftk_display_x11.h"
@@ -122,7 +124,6 @@ static void ftk_display_x11_destroy(FtkDisplay* thiz)
 		XDestroyWindow(priv->display, priv->win);
 		XFreeGC(priv->display, priv->gc);
 		XDestroyImage(priv->ximage);
-		//FTK_FREE(priv->bits);
 		FTK_ZFREE(thiz, sizeof(FtkDisplay) + sizeof(PrivInfo));
 	}
 
@@ -139,7 +140,12 @@ static Ret ftk_display_x11_init_image(FtkDisplay* thiz, int width, int height)
 		priv->ximage = NULL;
 	}
 
-	priv->bits = FTK_ZALLOC(width * height * priv->pixelsize);
+	/*
+	 * priv->bits must be created by Xmalloc, otherwise XDestroyImage()
+	 * can't free it, since priv->bits finally as priv->ximage->data
+	 * XDestroyImage(priv->ximage) will Xfree(priv->ximage->data)
+	 */
+	priv->bits = Xmalloc(width * height * priv->pixelsize);
 	priv->ximage = XCreateImage(priv->display, priv->visual, priv->depth, ZPixmap,
 		0, (char*)priv->bits, width, height,
 		32, width * priv->pixelsize);

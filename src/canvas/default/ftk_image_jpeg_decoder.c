@@ -170,10 +170,21 @@ static Ret ftk_image_jpeg_decoder_match(FtkImageDecoder* thiz, const char* filen
 	/* check SOI */
 	if (data[0] != 0xFF || data[1] != 0xD8)
 		goto fail;	/* not JPEG image */
+
 	/* check Identifier */
+    /*-----------------------------------------------------------------------------
+     *  jpeg raw -> FF D8 FF DB
+     *  jpeg JFIF -> FF D8 FF E0 nn nn 4A 46 49 46 00 01
+     *  jpeg Exif -> FF D8 FF E1 nn nn 45 78 69 66 00 00
+     *-----------------------------------------------------------------------------*/
 	memcpy(identifier, data+6, sizeof(identifier));
-	if (strncmp(identifier, "JFIF", 4) != 0 && strncmp(identifier, "Exif", 4) != 0)
-		goto fail;
+    if ((data[2] != 0xFF || data[3] != 0xDB) \
+            && strncmp(identifier, "JFIF", 4) != 0 \
+            && strncmp(identifier, "Exif", 4) != 0)
+    {
+        goto fail;
+    }
+
 	/* check EOI */
 	if (data[length-2] == 0xFF && data[length-1] == 0xD9) 
 	{

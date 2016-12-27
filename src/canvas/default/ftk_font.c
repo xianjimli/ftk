@@ -36,6 +36,8 @@
 #include "ftk_font.h"
 #include "ftk_util.h"
 
+#define FONT_HEIGHT_ENHANCE 1
+
 int ftk_font_get_char_extent(FtkFont* thiz, unsigned short unicode)
 {
 	int extent = 0;
@@ -347,7 +349,7 @@ static void		ftk_font_cache_destroy(FtkFont* thiz)
 FtkFont* ftk_font_cache_create (FtkFont* font, int max_glyph_nr)
 {
 	FtkFont* thiz = NULL;
-	int font_height = ftk_font_height(font);
+	int font_height = ftk_font_height(font) + FONT_HEIGHT_ENHANCE; /* if the font_height is 17 pixels , the glyph->height may be 18 pixels*/
 	return_val_if_fail(font != NULL && font_height > 0, NULL);
 
 	if((thiz = FTK_NEW_PRIV(FtkFont)) != NULL)
